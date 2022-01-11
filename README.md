@@ -43,13 +43,13 @@ Please enter your name: Poly
 
 ### I like to know the performance of each retirement savings account fund type for a fund manager 
 
-1. To achieve this User Story the application shall request the year of interest. A single year or range of years with start year and end year.
+1. To achieve this User Story the application shall request the year of interest. A single year or range of years with start year and end year.<br>
 
-Enter the Start Year of interest:
-(Available data is from 2016 to 2019) - this year range shall be determined from the data available.
+	Enter the Start Year of interest:<br>
+	(Available data is from 2016 to 2019) - this year range shall be determined from the data available.<br>
 
-Enter the End Year of interest (leave blank if same as Start Year):
-Confirmation and validation checks shall be carried out.
+	Enter the End Year of interest (leave blank if same as Start Year):<br>
+	Confirmation and validation checks shall be carried out.
 
 2. Select PFA of interest:
 
