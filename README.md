@@ -1,4 +1,4 @@
-# **THE PENSION ADVISSER**
+# **THE PENSION ADVISER**
 ## **Objective**
 
 Design and deploy an interactive Command Line (CLI) application that enables the user to gain insight into the performance rates of returns of Pension Fund Administrators (PFA) published by the National Pension Commission (PenCom) of Nigeria (pencom.gov.ng). This will assist contributors in the pension fund make informed decision on which PFA to chose as their retirement savings account fund manager based on performance rates of return over a period. The project shall be deployed through Heroku, run on a command line and programmed using Python.
@@ -24,32 +24,48 @@ The user stories that will guide the development of this application include:
 2. As a citizen interested in the economic growth of Nigeria I like to know the pension industry performance over a given period and fund type.
 
 ### **Initial Design Concept**
-My intention is to guide the contributor in the pension industry in Nigeria to easily find out which PFAs are best performing in terms of returns on investment. This will be achieved by analysing the data that PenCom (the regulator of the industry) posted on its website. It is a simple design that would ask the user the PFA and fund of interest and reply with the performance of that PFA plus the industry performance. It will also produce which PFA has the best performance for a given fund. If time permits I intend to give the user the option to select the period of interest, that is starting year and ending year for the analysis.
+My intention is to guide the contributor in the pension industry in Nigeria to easily find out which PFAs are best performing in terms of returns on investment. This will be achieved by analysing the data that PenCom (the regulator of the industry) posted on its website. It is a simple design that would ask the user the PFA and fund of interest and reply with the performance of that PFA plus the industry performance. It will also produce which PFA has the best performance for a given fund. I intend to give the user the option to select the period of interest, that is starting year and ending year for the analysis. Since the data available is limited, the user will be guided on the years that are available.
 
 #### **Wireframe**
 The application is of a Command Line type with limitations on the width and height of the interaction area. Therefore, the wirframe is a simple one as given below:
+
+#### **Color Scheme**
+In order to enhance the user experience I chose to apply some colors available through the `lazyme` package.
 
 ![Application Wirefrme](/readme-docs/pp3_wireframe.png)
 
 ## **Features**
 
+### Username 
+The name of the user shall be requested as the first data after the Welcome message. This shall be static and not change throughout the interaction with the user. Username shall be alphanumeric and between 3 and 15 characters long. This shall be validated by the application.
+
 Please enter your name: Poly
 
-	Select PFA of interest:
-1	AIICO Pension Managers Limited
-2	APT Pension Funds Managers Limited
-3	ARM Pension Managers Limited
-4	AXA Mansard Pensions Limited
-5	Crusader Sterling Pension Limited
+### I like to know the performance of each retirement savings account fund type for a fund manager 
 
-If PFA is not selected, analysis will be based on industry wide data.
+1. To achieve this User Story the application shall request the year of interest. A single year or range of years with start year and end year.
 
-Select fund type of interest:
+Enter the Start Year of interest:
+(Available data is from 2016 to 2019) - this year range shall be determined from the data available.
 
-1.	Fund I: Retirement Savings Account Fund I (An Active Contributor who is below 50 yrs of age and chooses for his contribution to be invested in this fund)
-2.	Fund II: Retirement Savings Account Fund II (default fund for all Active Contributors who are below 50 yrs of age )
-3.	Fund III: Retirement Savings Account Fund III (default fund for all Active Contributors who are  50 yrs and above ) 
-4.	Fund IV:  Retirement Savings Account Fund IV (Fund for Retirees only)
+Enter the End Year of interest (leave blank if same as Start Year):
+Confirmation and validation checks shall be carried out.
+
+2. Select PFA of interest:
+
+	1.	AIICO Pension Managers Limited
+	2.	APT Pension Funds Managers Limited
+	3.	ARM Pension Managers Limited
+	4.	AXA Mansard Pensions Limited
+	5.	Crusader Sterling Pension Limited
+	If PFA is not selected, analysis will be based on industry wide data.
+
+3. Select fund type of interest:
+
+	1.	Fund I: Retirement Savings Account Fund I (An Active Contributor who is below 50 yrs of age and chooses for his contribution to be invested in this fund)
+	2.	Fund II: Retirement Savings Account Fund II (default fund for all Active Contributors who are below 50 yrs of age )
+	3.	Fund III: Retirement Savings Account Fund III (default fund for all Active Contributors who are  50 yrs and above ) 
+	4.	Fund IV:  Retirement Savings Account Fund IV (Fund for Retirees only)
 Confirm selection: 
 
 Average return on investment for Fund I (2018 – 2019) and PFA  yyy is  : xx.xx   (available if PFA was selected)
