@@ -1,31 +1,60 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# **THE PENSION ADVISSER**
+## **Objective**
 
-Welcome USER_NAME,
+Design and deploy an interactive Command Line (CLI) application that enables the user to gain insight into the performance rates of returns of Pension Fund Administrators (PFA) published by the National Pension Commission of Nigeria (pencom.gov.ng). This will assist contributors in the pension fund make informed decision on which PFA to chose as their retirement savings account fund manager based on performance rates of return over a period. The project shall be deployed through Heroku, run on a command line and programmed using Python.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+## **Aims of the Site**
 
-## Reminders
+The aim of this site is to provide an interactive application to enable the user to obtain information on PFA performance on any of the funds in the Nigerian pension industry. When completed the final product should:
+*	Enable the user chose the fund type of interest
+*	Obtain data on PFA performance on the chosen fund
+*	Obtain industry average performance on a chosen fund type for a given year
+*	be programmatically error free
+*	be written using Python
+*	check all input errors and handle the gracefully with appropriate messages to the user
+*	educate the user regarding use of the application and validity of inputs
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+## **User Experience Design**
 
-## Creating the Heroku app
+### **User Stories**
+The user stories that will guide the development of this application include:
+1. As a contributor in the pension industry in Nigeria I like to know the performance of each retirement savings account fund type for a fund manager (PFA) of my interest to enable me decide to change my fund type or the fund manager.
+2. As a citizen interested in the economic growth of Nigeria I like to know the pension industry performance over a given period and fund type.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## **Features**
 
-1. `heroku/python`
-2. `heroku/nodejs`
+Please enter your name: Poly
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+	Select PFA of interest:
+1	AIICO Pension Managers Limited
+2	APT Pension Funds Managers Limited
+3	ARM Pension Managers Limited
+4	AXA Mansard Pensions Limited
+5	Crusader Sterling Pension Limited
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+If PFA is not selected, analysis will be based on industry wide data.
 
-Connect your GitHub repository and deploy as normal.
+Select fund type of interest:
 
-## Constraints
+1.	Fund I: Retirement Savings Account Fund I (An Active Contributor who is below 50 yrs of age and chooses for his contribution to be invested in this fund)
+2.	Fund II: Retirement Savings Account Fund II (default fund for all Active Contributors who are below 50 yrs of age )
+3.	Fund III: Retirement Savings Account Fund III (default fund for all Active Contributors who are  50 yrs and above ) 
+4.	Fund IV:  Retirement Savings Account Fund IV (Fund for Retirees only)
+Confirm selection: 
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+Average return on investment for Fund I (2018 – 2019) and PFA  yyy is  : xx.xx   (available if PFA was selected)
+Pension Industry Average return on investment for Fund I (2018 – 2019) is: xx.xx
+Best performing PFA for Fund I (2018 – 2019) is : pfa name with xx.xx rate of return.
+Thank you for using the application
 
------
-Happy coding!
+Would you like to make another enquiry? y/n
+
+## **Data Model**
+As at the commencement of this application design on 10 January, 2022 the regulator of the Pension industry in Nigeria (PenCom) had published performance data (rates of return on investment) for its 22 licensed PFAs between 2016 and 2019.
+
+
+![Performance Data from PenCom](/readme-docs/pfa_performance_from_pencom.png)
+
+From the data available I had to produce two Excel sheets that would be hosted at Google sheets.
+The first Excel sheet contains the serial number of the PFAs which will server as the ID, the abbreviated name and the full names. This will enable me display meaningful prompts to the user when selecting a PFA.
+The second Excel Sheet contains data for each PFA, Fund type, Year and the return rate. The structure of this Excel sheet will enable me add more rows for performance data for 2020 or any subsequent years when they become available from the PenCom. Also the structure enables the use of Python to query the data in an efficient manner and produce wither averages for a PFA and Fund type or for the entire pension industry.
