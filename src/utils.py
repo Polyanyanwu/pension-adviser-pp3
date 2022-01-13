@@ -10,7 +10,7 @@ def confirm_yes_no(prompt: str):
         Arguments:
             prompt: this will be the message that needa a Yes or No confirmation from user
         Returns:
-            boolean: True if user confirms "y" False otherwise. 
+            boolean: True if user confirms "y" False if 'n'.
      """
 
     YES_NO = ('y', 'n')
@@ -19,7 +19,7 @@ def confirm_yes_no(prompt: str):
 
     while answer not in YES_NO:
         pc("Incorrect option", "red")
-        pc("Please input 'y' or 'n'","cyan")
+        pc("Please input 'y' or 'n'", "cyan")
         pc(f"{prompt} ('y' or 'n')", "cyan")
         answer = input().strip().lower()
     if answer == 'y':
