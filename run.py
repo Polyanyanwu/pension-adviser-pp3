@@ -3,6 +3,9 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 
 from src.intro import introduction
+from src.utils import confirm_yes_no
 
 user_name = introduction()
-print(f"Returned user==={user_name}")
+print(f"Welcome {user_name}!")
+display_instruction = confirm_yes_no("Would you like to go through the instructions?")
+print(display_instruction)

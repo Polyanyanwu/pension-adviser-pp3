@@ -15,7 +15,7 @@ class Username():
 
     def _validate_username(self,  user_name: str):
         """Checks username input is valid
-   
+
         Arguments:
             user_name: The string input typed in by the user to be validated
         Returns:
