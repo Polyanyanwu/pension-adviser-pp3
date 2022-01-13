@@ -29,10 +29,15 @@ My intention is to guide the contributor in the pension industry in Nigeria to e
 #### **Wireframe**
 The application is of a Command Line type with limitations on the width and height of the interaction area. Therefore, the wirframe is a simple one as given below:
 
+![Application Wirefrme](/readme-docs/pp3_wireframe.png)
+
 #### **Color Scheme**
 In order to enhance the user experience I chose to apply some colors available through the `lazyme` package.
 
-![Application Wirefrme](/readme-docs/pp3_wireframe.png)
+#### **Flowchart**
+The initial flowchart of the application has been produced to guide the application development. It may differ slightly from the final application as more insights may be gathered as the application is being developed.
+
+![Application Flowchart](/readme-docs/pension_adviser_flowchart.png)
 
 ## **Features**
 
