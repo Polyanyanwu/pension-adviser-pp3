@@ -28,7 +28,7 @@ class Username():
             user_name = user_name.strip()
             if len(user_name) > 15 or len(user_name) < 3:
                 raise ValueError("Length of User name mut be between 3 and 15")
-            if not user_name.isalnum():
+            if not ''.join(user_name.split()).isalnum():
                 raise ValueError("Non alphanumeric characters detected")
             if profanity.contains_profanity(user_name):
                 raise ValueError("Profane word found")
@@ -54,7 +54,7 @@ class Username():
             print_with_color("Lets meet you, enter a user name", "yellow")
             print_with_color("A-Z, a-z, 0-9 & spaces are permitted", "yellow")
             print_with_color("Username should be between 3 and 15 characters", "yellow")
-            print_with_color("leading and training spaces will be removed.", "yellow")
+            print_with_color("leading & training spaces will be removed.", "yellow")
             user_name = input("Please type in a user name:\n")
             if self._validate_username(user_name):
                 break

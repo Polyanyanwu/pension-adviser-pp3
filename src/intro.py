@@ -6,7 +6,7 @@ from src.username import Username
 
 
 def introduction():
-    """ print initial welcome message """
+    """ print initial welcome message and obtain username for the user"""
 
     print_with_color('Welcome Dear Pension Investment Enthusiast!\n', 'blue')
     print('Do you operate a Retirement Savings Account in Nigeria? Or')
