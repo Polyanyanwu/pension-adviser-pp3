@@ -19,6 +19,7 @@ def confirm_yes_no(prompt: str):
 
     while answer not in YES_NO:
         pc("Incorrect option", "red")
+        pc("Please input 'y' or 'n'","cyan")
         pc(f"{prompt} ('y' or 'n')", "cyan")
         answer = input().strip().lower()
     if answer == 'y':
