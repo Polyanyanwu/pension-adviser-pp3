@@ -1,13 +1,12 @@
 """print the initial welcome to user and request username"""
 
-
-from src.color_prints import printCyan, printYellow, printRed, printWhite
-
-from src.username import Username
-
 from time import sleep
 
 from getch import getch
+
+from src.color_prints import printCyan, printWhite
+
+from src.username import Username
 
 from src.utils import confirm_yes_no
 
@@ -21,7 +20,7 @@ def introduction():
     print('Do you operate a Retirement Savings Account in Nigeria? Or')
     print('Are you an interested person that wants to know more about')
     print('   returns on investments of pension assets in Nigeria?')
-    printCyan("Let’s find out which PFAs achieve best returns on pension funds.\n")
+    printCyan("Let’s find out which PFAs have best returns on pension funds\n")
     user_name = Username()
     return user_name.username
 
@@ -72,8 +71,8 @@ def instruction_manager():
     """ repeat print instructions for user until the user is okay """
 
     print_instructions()
-    print_instruc = True
-    while print_instruc:
-        print_instruc = confirm_yes_no("Would you like to repeat the instructions?")
-        if print_instruc:
+    print_inst = True
+    while print_inst:
+        print_inst = confirm_yes_no("Would you like to repeat the instructions?")
+        if print_inst:
             print_instructions()

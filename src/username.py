@@ -1,7 +1,8 @@
 """Receive user name input and carry out validation"""
 
 from better_profanity import profanity  # ensure profane words are disallowed
-from src.color_prints import printCyan, printBlue, printRed
+
+from src.color_prints import printCyan, printRed
 
 
 class Username:
