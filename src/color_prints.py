@@ -28,3 +28,8 @@ def printCyan(data, newline: str = "\n"):
 def printBlue(data, newline="\n"):
     """print string data in Blue color """  
     print("\033[34m {}\033[00m" .format(data), end=newline)
+
+
+def printWhite(data, newline="\n"):
+    """print string data in White color """  
+    print("\u001b[37m {}\033[00m" .format(data), end=newline)

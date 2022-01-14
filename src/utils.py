@@ -3,7 +3,7 @@ Utility module to contain general functions
 1. confirm_yes_no function to display a prompt and obtain a Y or N confirmation
 """
 
-from src.color_prints import printCyan, printBlue, printRed
+from src.color_prints import printCyan, printWhite, printRed
 
 def confirm_yes_no(prompt: str):
     """ display a prompt and let user confirm by typing y or n
@@ -15,7 +15,7 @@ def confirm_yes_no(prompt: str):
      """
 
     YES_NO = ('y', 'n')
-    print(f"{prompt}: ")
+    printWhite(f"{prompt}: ","")
     printCyan("('y' or 'n')")
     answer = input().strip().lower()
 
