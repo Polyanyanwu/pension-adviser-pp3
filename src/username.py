@@ -1,10 +1,10 @@
 """Receive user name input and carry out validation"""
 
 from better_profanity import profanity  # ensure profane words are disallowed
-from src.color_prints import print_with_color
+from src.color_prints import printCyan, printBlue, printRed
 
 
-class Username():
+class Username:
     """Create a Username object
 
     Returns a validated username entered by the user
@@ -34,8 +34,8 @@ class Username():
                 raise ValueError("Profane word found")
 
         except ValueError as e:
-            print_with_color(f"Invalid username {user_name}:", "red")
-            print_with_color(f"{e}, please try again.\n", "red")
+            printRed(f"Invalid username {user_name}:", "")
+            print(f"{e}, please try again.\n")
             return False
 
         return True
@@ -51,10 +51,10 @@ class Username():
         """
 
         while True:
-            print_with_color("Lets meet you, enter a user name", "yellow")
-            print_with_color("A-Z, a-z, 0-9 & spaces are permitted", "yellow")
-            print_with_color("Username should be between 3 and 15 characters", "yellow")
-            print_with_color("leading & training spaces will be removed.", "yellow")
+            print("Lets meet you, enter a user name")
+            printCyan("A-Z, a-z, 0-9 & spaces are permitted")
+            printCyan("Username should be between 3 and 15 characters")
+            printCyan("leading & training spaces will be removed.")
             user_name = input("Please type in a user name:\n")
             if self._validate_username(user_name):
                 break
