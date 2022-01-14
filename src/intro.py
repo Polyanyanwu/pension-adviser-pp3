@@ -7,7 +7,7 @@ from src.username import Username
 
 from time import sleep
 
-import getch
+from getch import getch
 
 from src.utils import confirm_yes_no
 
@@ -45,6 +45,12 @@ def print_instructions():
     printCyan("               ===================")
     printWhite("The Pension Adviser will give you insights on the performance")
     printWhite("of the Pension Industry in Nigeria.\n")
+    printWhite("Next you will be required to select a Fund")
+    printWhite("from the list of available Fund Types.")
+    printWhite("Select a Fund Type by inputting number listed beside the fund")
+    printCyan("Press any Key to continue...")
+    getch.getch()
+
     printWhite("You will be required to input the Start Year and End Year")
     printWhite("of your interest. E.g Start Year: 2016  End Year: 2018.")
     printWhite("If your input spans more than one year")
@@ -52,11 +58,7 @@ def print_instructions():
     printWhite("You will be notified of the valid years from data available.")
     printCyan("Press any Key to continue...")
     getch.getch()
-    printWhite("Next you will be required to select a Fund")
-    printWhite("from the list of available Fund Types.")
-    printWhite("Select a Fund Type by inputting number listed beside the fund")
-    printCyan("Press any Key to continue...")
-    getch.getch()
+    
     printWhite("Next you will select a Pension Fund Administrator")
     printWhite("You may chose no PFA, in that case you will get")
     printWhite("analysis for the entire industry without a specific PFA")
