@@ -25,6 +25,7 @@ def introduction():
     user_name = Username()
     return user_name.username
 
+
 def _print_intro_logo():
     """ print the introdution logo """
 
@@ -37,6 +38,7 @@ def _print_intro_logo():
     printCyan("OO	       OO           OO      OO OO     OO           OO")
     printWhite("OO	       OOOOOOOOO    OO         OO    OO             OO\n")
     printWhite("THE NIGERIAN PENSION ADVISER\n")
+
 
 def print_instructions():
     """print the instructions to guide the user """
@@ -58,7 +60,7 @@ def print_instructions():
     printWhite("You will be notified of the valid years from data available.")
     printCyan("Press any Key to continue...")
     getch.getch()
-    
+
     printWhite("Next you will select a Pension Fund Administrator")
     printWhite("You may chose no PFA, in that case you will get")
     printWhite("analysis for the entire industry without a specific PFA")
@@ -68,6 +70,7 @@ def print_instructions():
 
 def instruction_manager():
     """ repeat print instructions for user until the user is okay """
+
     print_instructions()
     print_instruc = True
     while print_instruc:
