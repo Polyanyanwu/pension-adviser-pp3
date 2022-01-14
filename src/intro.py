@@ -51,7 +51,7 @@ def print_instructions():
     printWhite("from the list of available Fund Types.")
     printWhite("Select a Fund Type by inputting number listed beside the fund")
     printCyan("Press any Key to continue...")
-    getch.getch()
+    getch()
 
     printWhite("You will be required to input the Start Year and End Year")
     printWhite("of your interest. E.g Start Year: 2016  End Year: 2018.")
@@ -59,7 +59,7 @@ def print_instructions():
     printWhite("the data will be average for the period entered")
     printWhite("You will be notified of the valid years from data available.")
     printCyan("Press any Key to continue...")
-    getch.getch()
+    getch()
 
     printWhite("Next you will select a Pension Fund Administrator")
     printWhite("You may chose no PFA, in that case you will get")
