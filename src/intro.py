@@ -9,6 +9,8 @@ from time import sleep
 
 import getch
 
+from src.utils import confirm_yes_no
+
 
 def introduction():
     """ print initial welcome message and obtain username for the user"""
@@ -60,4 +62,13 @@ def print_instructions():
     printWhite("analysis for the entire industry without a specific PFA")
     printWhite("If a PFA is selected, you will get analysis")
     printWhite("for the PFA and the industry")
- 
+
+
+def instruction_manager():
+    """ repeat print instructions for user until the user is okay """
+    print_instructions()
+    print_instruc = True
+    while print_instruc:
+        print_instruc = confirm_yes_no("Would you like to repeat the instructions?")
+        if print_instruc:
+            print_instructions()
