@@ -43,16 +43,12 @@ def get_fund_years(fund_type: int):
             list(filter(lambda pfa: pfa['fund'] == fund_code, RATES_RECORDS))
         min_year = min(filter_fund, key=lambda x: x['year'])['year']
         max_year = max(filter_fund, key=lambda x: x['year'])['year']
-    # NameError is raised if RATES_RECORDS is not defined 
+    # NameError is raised if RATES_RECORDS is not defined
     # which is caused by the Google sheet access issues
     except NameError:
         print("Rates record not found, Google sheet not available.\n")
         return None
     except ValueError as val_error:
-        print(f"Invalid data: {val_error}, please try again.\n")
+        print(f"Fund year error: {val_error}, please try again.\n")
         return None
     return (min_year, max_year)
-
-
-test = get_fund_years(4)
-print(test)
