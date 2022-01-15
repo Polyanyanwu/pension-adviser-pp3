@@ -89,6 +89,34 @@ def get_years(fund_type: int):
         print_red("Could not retrieve valid years ", "")
         print_red("from Google sheet. Try later")
         return None
-    print_cyan(f"Valid year range is {valid_years[0]} to {valid_years[1]}")
-    start_year = input("Please enter Start Year: ")
-    print(start_year)
+
+    while True:
+        print_cyan(f"Valid year range is {valid_years[0]} to {valid_years[1]}")
+        start_year = input("Please enter Start Year: ")
+        if validate_year(valid_years, start_year):
+            break
+    while True:
+        print_cyan(f"Valid year range is {valid_years[0]} to {valid_years[1]}")
+        end_year = input("Please enter End Year: ")
+        if validate_year(valid_years, end_year):
+            if int(start_year) > int(end_year):
+                print_red("End Year must be less or equal to Start Year")
+            else:
+                break
+    return(start_year, end_year)
+
+
+def validate_year(valid_years, year_to_validate):
+    """ validate year entered by user """
+
+    try:
+        year_input = int(year_to_validate)
+        year_range = range(valid_years[0], valid_years[1]+1, 1)
+        if year_input not in year_range:
+            raise ValueError(
+                f"Your input must be in range {valid_years[0]} to {valid_years[1]}"
+            )
+    except ValueError as val_error:
+        print_red(f"Invalid data: {val_error}, please try again.\n")
+        return False
+    return True
