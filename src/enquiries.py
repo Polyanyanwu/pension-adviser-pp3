@@ -5,10 +5,8 @@ from getch import getch
 from src.color_prints import print_cyan, print_yellow, print_white, print_red
 
 
-def get_user_data(user: str):
-
-    """ get the Fund type, years and PFA for the enquiry"""
-
+def _display_fund_choices():
+    """ display fund choices to user """
     print_yellow("Great! Let's get started\n")
     print_cyan("Select the Fund of interest by typing", '')
     print_yellow("1, 2, 3, or 4")
@@ -26,6 +24,13 @@ def get_user_data(user: str):
     print_yellow("4: ", '')
     print_white("Fund IV:  RSA Fund for Retirees only")
 
+
+def get_user_data(user: str):
+
+    """ get the Fund type, years and PFA for the enquiry"""
+
+    _display_fund_choices()
+
     while True:
         print_white("Please enter your choice", '')
         print_yellow("1, 2, 3, or 4")
@@ -34,6 +39,8 @@ def get_user_data(user: str):
             if confirm_entry(fund_choice):
                 print("Choice is okay!")
                 break
+            else:
+                _display_fund_choices()
     return user
 
 
