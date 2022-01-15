@@ -44,11 +44,11 @@ def print_instructions():
 
     print_cyan("                THE INSTRUCTIONS")
     print_cyan("               ===================")
-    print_white("The Pension Adviser will give you insights on the performance")
-    print_white("of the Pension Industry in Nigeria.\n")
+    print_white("The Pension Adviser will give you insights on the")
+    print_white("performance of the Pension Industry in Nigeria.\n")
     print_white("Next you will be required to select a Fund")
     print_white("from the list of available Fund Types.")
-    print_white("Select a Fund Type by inputting number listed beside the fund")
+    print_white("Select a Fund Type by inputting number listed beside it")
     print_cyan("Press any Key to continue...")
     getch()
 
@@ -64,7 +64,7 @@ def print_instructions():
     print_white("You may chose no PFA, in that case you will get")
     print_white("analysis for the entire industry without a specific PFA")
     print_white("If a PFA is selected, you will get analysis")
-    print_white("for the PFA and the industry")
+    print_white("for the PFA and the industry\n")
 
 
 def instruction_manager():
@@ -73,6 +73,6 @@ def instruction_manager():
     print_instructions()
     print_inst = True
     while print_inst:
-        print_inst = confirm_yes_no("Would you like to repeat the instructions?")
+        print_inst = confirm_yes_no("Would you like to repeat instructions?")
         if print_inst:
             print_instructions()
