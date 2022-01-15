@@ -1,7 +1,7 @@
 """ run the enquiries the user wants on the pension returns on investment """
 
 from getch import getch
-
+from src.model import get_fund_years
 from src.color_prints import print_cyan, print_yellow, print_white, print_red
 
 
@@ -41,6 +41,9 @@ def get_user_data(user: str):
                 break
             else:
                 _display_fund_choices()
+
+    # get start and end year
+    get_years(int(fund_choice))
     return user
 
 
@@ -53,8 +56,8 @@ def validate_fund_choice(fund_choice):
             raise ValueError(
                 f"Your input must be 1, 2, 3 or 4: you entered {choice}"
             )
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+    except ValueError as val_error:
+        print(f"Invalid data: {val_error}, please try again.\n")
         return False
     return True
 
@@ -71,3 +74,21 @@ def confirm_entry(str_entered):
         getch()
         return False
     return True
+
+
+def get_years(fund_type: int):
+    """
+    Get start and end year from user
+    Argument:
+        fund_type - user selected fund type number
+    Return:
+        start year and end year from user input
+     """
+    valid_years = get_fund_years(fund_type)
+    if valid_years is None:
+        print_red("Could not retrieve valid years ", "")
+        print_red("from Google sheet. Try later")
+        return None
+    print_cyan(f"Valid year range is {valid_years[0]} to {valid_years[1]}")
+    start_year = input("Please enter Start Year: ")
+    print(start_year)
