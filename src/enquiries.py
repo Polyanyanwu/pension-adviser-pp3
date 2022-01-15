@@ -23,4 +23,27 @@ def get_user_data(user: str):
     printWhite("    50 yrs and above")
     printYellow("4: ", '')
     printWhite("Fund IV:  RSA Fund for Retirees only")
+
+    while True:
+        printWhite("Please enter your choice", '')
+        printYellow("1, 2, 3, or 4")
+        fund_choice = input("")
+        if validate_fund_choice(fund_choice):
+            print("Choice is okay!")
+            break
     return user
+
+
+def validate_fund_choice(fund_choice):
+    """ validate the choice is number 1, to 4 """
+    choices = (1, 2, 3, 4)
+    try:
+        choice = int(fund_choice)
+        if choice not in choices:
+            raise ValueError(
+                f"Your input must be 1, 2, 3 or 4: you provided {choice}"
+            )
+    except ValueError as e:
+        print(f"Invalid data: {e}, please try again.\n")
+        return False
+    return True
