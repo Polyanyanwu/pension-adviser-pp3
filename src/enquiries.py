@@ -2,32 +2,32 @@
 
 from getch import getch
 
-from src.color_prints import printCyan, printYellow, printWhite
+from src.color_prints import print_cyan, print_yellow, print_white
 
 
 def get_user_data(user: str):
 
     """ get the Fund type, years and PFA for the enquiry"""
 
-    printYellow("Great! Let's get started\n")
-    printCyan("Select the Fund of interest by typing", '')
-    printYellow("1, 2, 3, or 4")
-    printYellow("1: ", '')
-    printWhite("Fund I: Retirement Savings Account(RSA) Fund I")
-    printWhite("    fund for an Active Contributor who is below 50 yrs of age")
-    printWhite("    and chooses for contribution to be invested in this fund")
-    printYellow("2: ", '')
-    printWhite("Fund II: Default fund for all Active Contributors who are")
-    printWhite("    below 50 yrs of age")
-    printYellow("3: ", '')
-    printWhite("Fund III: Default fund for all Active Contributors who are")
-    printWhite("    50 yrs and above")
-    printYellow("4: ", '')
-    printWhite("Fund IV:  RSA Fund for Retirees only")
+    print_yellow("Great! Let's get started\n")
+    print_cyan("Select the Fund of interest by typing", '')
+    print_yellow("1, 2, 3, or 4")
+    print_yellow("1: ", '')
+    print_white("Fund I: Retirement Savings Account(RSA) Fund I")
+    print_white("    fund for an Active Contributor who is below 50 yrs of age")
+    print_white("    and chooses for contribution to be invested in this fund")
+    print_yellow("2: ", '')
+    print_white("Fund II: Default fund for all Active Contributors who are")
+    print_white("    below 50 yrs of age")
+    print_yellow("3: ", '')
+    print_white("Fund III: Default fund for all Active Contributors who are")
+    print_white("    50 yrs and above")
+    print_yellow("4: ", '')
+    print_white("Fund IV:  RSA Fund for Retirees only")
 
     while True:
-        printWhite("Please enter your choice", '')
-        printYellow("1, 2, 3, or 4")
+        print_white("Please enter your choice", '')
+        print_yellow("1, 2, 3, or 4")
         fund_choice = input("")
         if validate_fund_choice(fund_choice):
             if confirm_entry(fund_choice):
@@ -54,11 +54,12 @@ def validate_fund_choice(fund_choice):
 def confirm_entry(string_entered):
     """ confirm that data entered is same as to be entered """
 
-    printYellow(f"Confirm your entry by typing {string_entered} again", '')
+    print_yellow(f"Confirm your entry by typing {string_entered} again", '')
     new_input = input()
     if str(string_entered) != new_input:
-        printYellow(f"Your entry {string_entered} is different from your confirmation {new_input}")
-        printCyan("Press any Key to try again...")
+        print_yellow(f"Your entry {string_entered}\
+             is different from your confirmation {new_input}")
+        print_cyan("Press any Key to try again...")
         getch()
         return False
     return True

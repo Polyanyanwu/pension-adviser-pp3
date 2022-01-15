@@ -9,7 +9,8 @@ from src.enquiries import get_user_data
 
 user_name = introduction()
 print(f"Welcome {user_name}!")
-display_instruction = confirm_yes_no("Would you like to go through the instructions?")
-if display_instruction:
+DISPLAY_INSTRUCTION = \
+    confirm_yes_no("Would you like to go through the instructions?")
+if DISPLAY_INSTRUCTION:
     instruction_manager()
 get_user_data(user_name)
