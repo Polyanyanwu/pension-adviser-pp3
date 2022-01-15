@@ -1,5 +1,6 @@
 """ run the enquiries the user wants on the pension returns on investment """
 
+from getch import getch
 
 from src.color_prints import printCyan, printYellow, printWhite
 
@@ -29,8 +30,9 @@ def get_user_data(user: str):
         printYellow("1, 2, 3, or 4")
         fund_choice = input("")
         if validate_fund_choice(fund_choice):
-            print("Choice is okay!")
-            break
+            if confirm_entry(fund_choice):
+                print("Choice is okay!")
+                break
     return user
 
 
@@ -45,5 +47,18 @@ def validate_fund_choice(fund_choice):
             )
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
+        return False
+    return True
+
+
+def confirm_entry(string_entered):
+    """ confirm that data entered is same as to be entered """
+
+    printYellow(f"Confirm your entry by typing {string_entered} again", '')
+    new_input = input()
+    if str(string_entered) != new_input:
+        printYellow(f"Your entry {string_entered} is different from your confirmation {new_input}")
+        printCyan("Press any Key to try again...")
+        getch()
         return False
     return True
