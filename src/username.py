@@ -43,8 +43,9 @@ class Username:
 
     def _input_username(self):
         """ Function to enable user to input a username
-        The name should be with alphanumeric characters and spaces, between 3 and 15 characters.
-        The function checks for profane words using `better_profanity. 
+        The name should be with alphanumeric characters and spaces,
+        between 3 and 15 characters.
+        The function checks for profane words using `better_profanity.
         The prompt for username is repeated until valid username is inputed
 
         Returns:
