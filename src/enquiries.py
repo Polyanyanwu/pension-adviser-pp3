@@ -45,7 +45,8 @@ def get_user_data(user: str):
     get_years(int(fund_choice))
     print()  # empty line
     # get pfa
-    get_pfa()
+    pfa_selected = get_pfa()
+    print_red(pfa_selected)
     return user
 
 
@@ -59,7 +60,7 @@ def validate_selection(choice_tuple, choice_input):
                 f"Your input must be in {choice_tuple}: you entered {choice}"
             )
     except ValueError as val_error:
-        print(f"Invalid data: {val_error}, please try again.\n")
+        print_red(f"Invalid data: {val_error}, please try again.\n")
         return False
     return True
 
@@ -128,15 +129,21 @@ def get_pfa():
     """ display a list of pfas for user to select
     0 will be No PFA
     User must make a selection
+    PFAs are displayed in batches
+    User can input n for next set or p for previous where necessary
+
+    Returns:
+        selected PFA number (0 is for no PFA)
     """
     pfas = fetch_pfas()
     pfa_set = 1
     group_size = 5
     extra_options = ('0')
     pfa_options = tuple(range(pfa_set, pfa_set+5, 1))
+    choice = None
     while True:
         print_cyan("Please select a PFA by typing the number beside the Name")
-        # check if to display instruction for next
+        # check if to display instruction for next or previous
         if pfa_set == 1:
             print_yellow("Type n to display Next list")
             extra_options = ('0', 'n')
@@ -149,7 +156,7 @@ def get_pfa():
         print_yellow(0, "")
         print_white("I do not wish to select a PFA")
         for ind in pfa_options:
-            print_yellow(ind, "")
+            print_yellow(ind, "")  # print pfa ID numbers in different color
             print_white(pfas[ind-1][2])  # print the pfa name
         choice = input("Please enter your choice: ")
         if choice in extra_options or validate_selection(pfa_options, choice):
@@ -158,9 +165,11 @@ def get_pfa():
                 end_range = pfa_set * group_size + 1
                 if end_range > len(pfas):
                     end_range = len(pfas) + 1
-                pfa_options = tuple(range((pfa_set - 1) * group_size + 1, end_range, 1))
+                pfa_options = \
+                    tuple(range((pfa_set - 1) * group_size + 1, end_range, 1))
             elif choice == 'p':
                 pfa_set -= 1
-                pfa_options = tuple(range((pfa_set - 1) * group_size, pfa_set * group_size + 1, 1))
+                pfa_options = tuple(range((pfa_set - 1) * group_size + 1, pfa_set * group_size + 1, 1))
             else:
                 break
+    return choice
