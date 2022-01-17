@@ -52,3 +52,12 @@ def get_fund_years(fund_type: int):
         print(f"Fund year error: {val_error}, please try again.\n")
         return None
     return (min_year, max_year)
+
+
+def fetch_pfas():
+    """ fetch the list of PFA codes and names from the
+        Google sheet. Convert to list of tuples
+    Returns:
+        List of tuples containing pfa_no, pfa_short_name and pfa_name
+    """
+    return [tuple(x.values()) for x in PFA_RECORDS]
