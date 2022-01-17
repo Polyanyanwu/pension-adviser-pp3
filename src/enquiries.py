@@ -29,8 +29,29 @@ def get_user_data(user: str):
 
     """ get the Fund type, years and PFA for the enquiry"""
 
-    _display_fund_choices()
+    # get the fund type from user
+    fund_type = get_fund_type()
 
+    # get start and end year
+    start_end_years = get_years(int(fund_type))
+
+    # get pfa
+    pfa_selected = get_pfa()
+
+    print_yellow("All data inputed ===")
+    print("fund-type===", fund_type)
+    print("years ==", start_end_years)
+    print_red("pfa selected == ", pfa_selected)
+    return user
+
+
+def get_fund_type():
+    """ prompt the user with available fund types and
+    obtain valid selection from user
+    Returns:
+        the selected fund type
+    """
+    _display_fund_choices()
     while True:
         print_white("Please enter your choice", '')
         print_yellow("1, 2, 3, or 4")
@@ -40,14 +61,7 @@ def get_user_data(user: str):
                 break
             else:
                 _display_fund_choices()
-
-    # get start and end year
-    get_years(int(fund_choice))
-    print()  # empty line
-    # get pfa
-    pfa_selected = get_pfa()
-    print_red(pfa_selected)
-    return user
+    return fund_choice
 
 
 def validate_selection(choice_tuple: tuple, choice_input):
