@@ -171,5 +171,6 @@ def get_pfa():
                 pfa_set -= 1
                 pfa_options = tuple(range((pfa_set - 1) * group_size + 1, pfa_set * group_size + 1, 1))
             else:
-                break
+                if confirm_entry(choice):
+                    break
     return choice
