@@ -61,3 +61,14 @@ def fetch_pfas():
         List of tuples containing pfa_no, pfa_short_name and pfa_name
     """
     return [tuple(x.values()) for x in PFA_RECORDS]
+
+
+def fetch_return_rates():
+    """ fetch all return data to be analysed
+    in the enquiries module
+    Returns:
+        list of dictionaries containing
+        the performance of each PFA for available fund types
+        and years
+    """
+    return RATES_RECORDS

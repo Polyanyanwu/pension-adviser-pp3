@@ -41,7 +41,7 @@ def get_user_data(user: str):
     print_yellow("All data inputed ===")
     print("fund-type===", fund_type)
     print("years ==", start_end_years)
-    print_red("pfa selected == ", pfa_selected)
+    print("pfa selected == ", pfa_selected)
     return user
 
 
@@ -187,4 +187,9 @@ def get_pfa():
             else:
                 if confirm_entry(choice):
                     break
-    return choice
+    if int(choice) == 0:
+        return None
+    
+    return pfas[int(choice)-1]
+
+    # def results(fund_type, years: tuple, pfa):
