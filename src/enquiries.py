@@ -1,7 +1,7 @@
 """ run the enquiries the user wants on the pension returns on investment """
 
 from getch import getch
-from src.model import get_fund_years, fetch_pfas
+from src.model import get_fund_years, fetch_pfas, fetch_return_rates
 from src.color_prints import print_cyan, print_yellow, print_white, print_red
 
 
@@ -42,6 +42,8 @@ def get_user_data(user: str):
     print("fund-type===", fund_type)
     print("years ==", start_end_years)
     print("pfa selected == ", pfa_selected)
+
+    compute_results(fund_type, start_end_years, pfa_selected)
     return user
 
 
@@ -189,26 +191,42 @@ def get_pfa():
                     break
     if int(choice) == 0:
         return None
-    
+
     return pfas[int(choice)-1]
 
+
 def get_fund_code(fund_type: int):
-    """ 
-    Compute the fund code to be used in querying 
+    """
+    Compute the fund code to be used in querying
     the Google sheet return rates spreadsheet
     Only 4 fund types are available Fund I, Fund II, Fund III & Fund IV
     Returns:
         the fund code in the required string
     """
     if fund_type <= 3:
-        fund_code = "Fund " + "I" * i
+        fund_code = "Fund " + "I" * fund_type
     else:
         fund_code = "Fund IV"
-    
+
     return fund_code
 
 
-    def results(fund_type, years: tuple, pfa):
-    
-    
+def compute_results(fund_type, years: tuple, pfa):
+    """" test """
+    rates_data = fetch_return_rates()
+    fund_code = get_fund_code(int(fund_type))
 
+    # compute result for pfa
+    if pfa is not None:
+        # compute pfa performance for the given
+        # period and fund type
+        pfa_no = pfa[0]
+        filtered_data = list(filter(lambda item: int(item['year'])
+                                    >= int(years[0]) and int(item['year'])
+                                    <= int(years[1]) and item['fund'] ==
+                                    fund_code and int(item['pfa_no']) ==
+                                    pfa_no, rates_data))
+        rates = [item['return_rate'] for item in filtered_data]
+        avg = round(sum(rates)/len(rates), 2)
+        print_white(f"Average for {pfa[1]} {fund_code}", "")
+        print_white(f"period: {years[0]} to {years[1]} = {avg}%")
