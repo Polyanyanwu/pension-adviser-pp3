@@ -1,7 +1,7 @@
 """ run the enquiries the user wants on the pension returns on investment """
 
 from getch import getch
-from src.model import get_fund_years
+from src.model import get_fund_years, fetch_pfas
 from src.color_prints import print_cyan, print_yellow, print_white, print_red
 
 
@@ -37,13 +37,15 @@ def get_user_data(user: str):
         fund_choice = input("")
         if validate_selection((1, 2, 3, 4), fund_choice):
             if confirm_entry(fund_choice):
-                print("Choice is okay!")
                 break
             else:
                 _display_fund_choices()
 
     # get start and end year
     get_years(int(fund_choice))
+    print()  # empty line
+    # get pfa
+    get_pfa()
     return user
 
 
@@ -120,3 +122,45 @@ def validate_year(valid_years, year_to_validate):
         print_red(f"Invalid data: {val_error}, please try again.\n")
         return False
     return True
+
+
+def get_pfa():
+    """ display a list of pfas for user to select
+    0 will be No PFA
+    User must make a selection
+    """
+    pfas = fetch_pfas()
+    pfa_set = 1
+    group_size = 5
+    extra_options = ('0')
+    pfa_options = tuple(range(pfa_set, pfa_set+5, 1))
+    while True:
+        print_cyan("Please select a PFA by typing the number beside the Name")
+        # check if to display instruction for next
+        if pfa_set == 1:
+            print_yellow("Type n to display Next list")
+            extra_options = ('0', 'n')
+        elif pfa_set * group_size < len(pfas):
+            print_yellow("Type n to display Next list or p for Previous")
+            extra_options = ('0', 'n', 'p')
+        else:
+            print_yellow("Type p for Previous")
+            extra_options = ('0', 'p')
+        print_yellow(0, "")
+        print_white("I do not wish to select a PFA")
+        for ind in pfa_options:
+            print_yellow(ind, "")
+            print_white(pfas[ind-1][2])  # print the pfa name
+        choice = input("Please enter your choice: ")
+        if choice in extra_options or validate_selection(pfa_options, choice):
+            if choice == 'n':
+                pfa_set += 1
+                end_range = pfa_set * group_size + 1
+                if end_range > len(pfas):
+                    end_range = len(pfas) + 1
+                pfa_options = tuple(range((pfa_set - 1) * group_size + 1, end_range, 1))
+            elif choice == 'p':
+                pfa_set -= 1
+                pfa_options = tuple(range((pfa_set - 1) * group_size, pfa_set * group_size + 1, 1))
+            else:
+                break
