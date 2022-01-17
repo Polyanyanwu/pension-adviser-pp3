@@ -50,7 +50,7 @@ def get_user_data(user: str):
     return user
 
 
-def validate_selection(choice_tuple, choice_input):
+def validate_selection(choice_tuple: tuple, choice_input):
     """ validate the choice is number contained in the tuple """
     # choices = (1, 2, 3, 4)
     try:
@@ -159,7 +159,7 @@ def get_pfa():
             print_yellow(ind, "")  # print pfa ID numbers in different color
             print_white(pfas[ind-1][2])  # print the pfa name
         choice = input("Please enter your choice: ")
-        if choice in extra_options or validate_selection(pfa_options, choice):
+        if choice in extra_options or validate_selection((0, ) + pfa_options, choice):
             if choice == 'n':
                 pfa_set += 1
                 end_range = pfa_set * group_size + 1
