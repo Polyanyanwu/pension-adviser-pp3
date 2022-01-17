@@ -192,4 +192,23 @@ def get_pfa():
     
     return pfas[int(choice)-1]
 
-    # def results(fund_type, years: tuple, pfa):
+def get_fund_code(fund_type: int):
+    """ 
+    Compute the fund code to be used in querying 
+    the Google sheet return rates spreadsheet
+    Only 4 fund types are available Fund I, Fund II, Fund III & Fund IV
+    Returns:
+        the fund code in the required string
+    """
+    if fund_type <= 3:
+        fund_code = "Fund " + "I" * i
+    else:
+        fund_code = "Fund IV"
+    
+    return fund_code
+
+
+    def results(fund_type, years: tuple, pfa):
+    
+    
+
