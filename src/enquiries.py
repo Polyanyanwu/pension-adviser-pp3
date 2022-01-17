@@ -241,15 +241,39 @@ def compute_results(fund_type, years: tuple, pfa):
     avg = round(sum(rates)/len(rates), 2)
     print_white(f"Industry Average for {fund_code}", "")
     print_white(f"{years[0]} to {years[1]} = {avg}%")
+    best_pfa = determine_best_pfa_returns(years, fund_code, rates_data)
+    print_white(f"Best PFA for {fund_code} {years[0]} to {years[1]} = ", '')
+    print_yellow(f"{best_pfa[0]} with {best_pfa[1]}% returns")
 
 
 def compute_pfa_average(pfa, years, fund_code, rates_data):
-    """ compute the average returns for a pfa and period """
+    """ compute the average returns for a pfa and years
+    Returns:
+        average returns for the given years, fund, and pfa
+    """
     filtered_data = list(filter(lambda item: int(item['year'])
                                 >= int(years[0]) and int(item['year'])
                                 <= int(years[1]) and item['fund'] ==
                                 fund_code and int(item['pfa_no']) ==
                                 pfa, rates_data))
     rates = [item['return_rate'] for item in filtered_data]
+    if len(rates) == 0:
+        return 0
     avg = round(sum(rates)/len(rates), 2)
     return avg
+
+
+def determine_best_pfa_returns(years, fund_code, rates_data):
+    """ compute average return for each pfa and given
+    fund type and period
+    Return:
+        the pfa name and average for the best PFA
+        that is PFA with the maximum returns
+     """
+    pfas = fetch_pfas()
+    all_pfa_returns = []
+    for pfa in pfas:
+        avg = compute_pfa_average(pfa[0], years, fund_code, rates_data)
+        all_pfa_returns.append((pfa[2], avg))
+    best_pfa = max(all_pfa_returns, key=lambda returns: returns[1])
+    return best_pfa
