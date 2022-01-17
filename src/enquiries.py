@@ -228,5 +228,15 @@ def compute_results(fund_type, years: tuple, pfa):
                                     pfa_no, rates_data))
         rates = [item['return_rate'] for item in filtered_data]
         avg = round(sum(rates)/len(rates), 2)
-        print_white(f"Average for {pfa[1]} {fund_code}", "")
-        print_white(f"period: {years[0]} to {years[1]} = {avg}%")
+        print_white(f"Average for {pfa[1]}, {fund_code}", "")
+        print_white(f"{years[0]} to {years[1]} = {avg}%")
+
+    # compute industry average
+    filtered_data = list(filter(lambda item: int(item['year'])
+                                >= int(years[0]) and int(item['year'])
+                                <= int(years[1]) and item['fund'] ==
+                                fund_code, rates_data))
+    rates = [item['return_rate'] for item in filtered_data]
+    avg = round(sum(rates)/len(rates), 2)
+    print_white(f"Industry Average for {fund_code}", "")
+    print_white(f"{years[0]} to {years[1]} = {avg}%")
