@@ -35,7 +35,7 @@ def get_user_data(user: str):
         print_white("Please enter your choice", '')
         print_yellow("1, 2, 3, or 4")
         fund_choice = input("")
-        if validate_fund_choice(fund_choice):
+        if validate_selection((1, 2, 3, 4), fund_choice):
             if confirm_entry(fund_choice):
                 print("Choice is okay!")
                 break
@@ -47,14 +47,14 @@ def get_user_data(user: str):
     return user
 
 
-def validate_fund_choice(fund_choice):
-    """ validate the choice is number 1, to 4 """
-    choices = (1, 2, 3, 4)
+def validate_selection(choice_tuple, choice_input):
+    """ validate the choice is number contained in the tuple """
+    # choices = (1, 2, 3, 4)
     try:
-        choice = int(fund_choice)
-        if choice not in choices:
+        choice = int(choice_input)
+        if choice not in choice_tuple:
             raise ValueError(
-                f"Your input must be 1, 2, 3 or 4: you entered {choice}"
+                f"Your input must be in {choice_tuple}: you entered {choice}"
             )
     except ValueError as val_error:
         print(f"Invalid data: {val_error}, please try again.\n")
