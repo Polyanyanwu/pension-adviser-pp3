@@ -38,12 +38,8 @@ def get_user_data(user: str):
     # get pfa
     pfa_selected = get_pfa()
 
-    print_yellow("All data inputed ===")
-    print("fund-type===", fund_type)
-    print("years ==", start_end_years)
-    print("pfa selected == ", pfa_selected)
-
-    compute_results(fund_type, start_end_years, pfa_selected)
+    result = compute_results(fund_type, start_end_years, pfa_selected)
+    print(result)
     return user
 
 
@@ -219,22 +215,18 @@ def compute_results(fund_type, years: tuple, pfa):
     """" test """
     rates_data = fetch_return_rates()
     fund_code = get_fund_code(int(fund_type))
-
+    results = []
     # compute result for pfa
     if pfa is not None:
         # compute pfa performance for the given
         # period and fund type
         pfa_no = pfa[0]
         avg = compute_pfa_average(pfa_no, years, fund_code, rates_data)
-        # filtered_data = list(filter(lambda item: int(item['year'])
-        #                             >= int(years[0]) and int(item['year'])
-        #                             <= int(years[1]) and item['fund'] ==
-        #                             fund_code and int(item['pfa_no']) ==
-        #                             pfa_no, rates_data))
-        # rates = [item['return_rate'] for item in filtered_data]
-        # avg = round(sum(rates)/len(rates), 2)
-        print_white(f"Average for {pfa[1]}, {fund_code}", "")
-        print_white(f"{years[0]} to {years[1]} = {avg}%")
+        pfa_result = f"Average for {pfa[1]}, {fund_code} "
+        pfa_result += f"{years[0]} to {years[1]}%"
+        print_white(f"{pfa_result} = {avg}%")
+        results.append({"details": pfa_result, "result": f"{avg}%"})
+        # print_white(f"{years[0]} to {years[1]} = {avg}%")
 
     # compute industry average
     filtered_data = list(filter(lambda item: int(item['year'])
@@ -245,9 +237,19 @@ def compute_results(fund_type, years: tuple, pfa):
     avg = round(sum(rates)/len(rates), 2)
     print_white(f"Industry Average for {fund_code}", "")
     print_white(f"{years[0]} to {years[1]} = {avg}%")
+
+    industry_result = f"Industry Average for {fund_code} "
+    industry_result += f"{years[0]} to {years[1]}"
+    results.append({"details": industry_result, "result": f"{avg}%"})
+
     best_pfa = determine_best_pfa_returns(years, fund_code, rates_data)
     print_white(f"Best PFA for {fund_code} {years[0]} to {years[1]} = ", '')
     print_yellow(f"{best_pfa[0]} with {best_pfa[1]}% returns")
+
+    best_pfa_result = f"Best PFA for {fund_code} {years[0]} to {years[1]}"
+    results.append({"details": best_pfa_result,
+                    "result": f"{best_pfa[0]} with {best_pfa[1]}% returns"})
+    return results
 
 
 def compute_pfa_average(pfa, years, fund_code, rates_data):
