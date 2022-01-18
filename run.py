@@ -4,7 +4,7 @@
 """
 from src.intro import introduction, instruction_manager, main_menu
 from src.enquiries import run_enquiry, print_enquiry_result
-from src.model import fetch_existing_results
+from src.model import fetch_existing_results, delete_existing_results
 
 user_name = introduction()
 print(f"Welcome {user_name}!")
@@ -21,4 +21,4 @@ while True:
     elif user_action == '3':
         run_enquiry(user_name)
     elif user_action == '4':
-        print("delete_exiting_enquiry")
+        delete_existing_results(user_name)

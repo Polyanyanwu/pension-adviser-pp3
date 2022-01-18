@@ -129,3 +129,21 @@ def fetch_existing_results(user):
     except gspread.WorksheetNotFound:
         print_red("Sorry no data to display: Please run enquiry first")
     return existing_data
+
+
+def delete_existing_results(user):
+    """ delete all existing enquiry results
+    Arguments:
+        user - the username to delete the enquiry results
+    Returns:
+        True if successful or False if not
+    """
+    try:
+        print_yellow("Deleting existing enquiry results ...")
+        worksheet = SHEET.worksheet(user)
+        worksheet.clear()
+        print_green("Successfully deleted existing results...\n")
+        return True
+    except gspread.WorksheetNotFound:
+        print_red("Sorry no data to delete: Please run enquiry first")
+    return False
