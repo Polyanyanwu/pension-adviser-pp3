@@ -39,9 +39,9 @@ def get_user_data(user: str):
     pfa_selected = get_pfa()
 
     result = compute_results(fund_type, start_end_years, pfa_selected)
+    print_enquiry_result(result)
     print_yellow("\n Saving enquiry results ...")
     save_results(user, result)
-    print(result)
     return user
 
 
@@ -285,3 +285,11 @@ def determine_best_pfa_returns(years, fund_code, rates_data):
         all_pfa_returns.append((pfa[2], avg))
     best_pfa = max(all_pfa_returns, key=lambda returns: returns[1])
     return best_pfa
+
+
+def print_enquiry_result(results):
+    """ print the enquiry result """
+
+    for result in results:
+        print_white(f"{result['details']} :")
+        print_yellow(f"{result['result']}")
