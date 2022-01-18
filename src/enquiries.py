@@ -25,7 +25,7 @@ def _display_fund_choices():
     print_white("Fund IV:  RSA Fund for Retirees only")
 
 
-def get_user_data(user: str):
+def run_enquiry(user: str):
 
     """ get the Fund type, years and PFA for the enquiry"""
 

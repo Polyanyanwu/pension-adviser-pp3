@@ -5,7 +5,7 @@
 
 from src.intro import introduction, instruction_manager
 from src.utils import confirm_yes_no
-from src.enquiries import get_user_data
+from src.enquiries import run_enquiry
 
 user_name = introduction()
 print(f"Welcome {user_name}!")
@@ -13,4 +13,4 @@ DISPLAY_INSTRUCTION = \
     confirm_yes_no("Would you like to go through the instructions?")
 if DISPLAY_INSTRUCTION:
     instruction_manager()
-get_user_data(user_name)
+run_enquiry(user_name)
