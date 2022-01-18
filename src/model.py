@@ -72,3 +72,31 @@ def fetch_return_rates():
         and years
     """
     return RATES_RECORDS
+
+
+def save_results(user: str, enq_result: dict):
+    """ persist the result of the enquiry to the spreadsheet """
+    # all_sheet = ' '.join(SHEET.worksheets().title())
+    # print(all_sheet)
+    try:
+        worksheet = SHEET.worksheet(user)
+        # retrieve old data
+        existing_data = worksheet.get_all_values()
+        print(existing_data)
+        # worksheet.clear()
+    except gspread.WorksheetNotFound as error:
+        worksheet = SHEET.add_worksheet(title=user, rows=0, cols=0)
+        print(error)
+    data_set = set()
+    print("existing data set")
+    for ind in range(1, len(existing_data)):
+        print(existing_data[ind])
+        data_set.add(existing_data[ind][0])
+    print("data set before ....")
+    print(data_set)
+    worksheet.append_row(list(enq_result[0].keys()))
+    for item in enq_result:
+        data_set.add(item["details"])
+        worksheet.append_row(list(item.values()))
+    print("data set after ....")
+    print(data_set)

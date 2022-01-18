@@ -1,7 +1,7 @@
 """ run the enquiries the user wants on the pension returns on investment """
 
 from getch import getch
-from src.model import get_fund_years, fetch_pfas, fetch_return_rates
+from src.model import get_fund_years, fetch_pfas, fetch_return_rates, save_results
 from src.color_prints import print_cyan, print_yellow, print_white, print_red
 
 
@@ -39,6 +39,8 @@ def get_user_data(user: str):
     pfa_selected = get_pfa()
 
     result = compute_results(fund_type, start_end_years, pfa_selected)
+    print_yellow("\n Saving enquiry results ...")
+    save_results(user, result)
     print(result)
     return user
 
@@ -223,7 +225,7 @@ def compute_results(fund_type, years: tuple, pfa):
         pfa_no = pfa[0]
         avg = compute_pfa_average(pfa_no, years, fund_code, rates_data)
         pfa_result = f"Average for {pfa[1]}, {fund_code} "
-        pfa_result += f"{years[0]} to {years[1]}%"
+        pfa_result += f"{years[0]} to {years[1]}"
         print_white(f"{pfa_result} = {avg}%")
         results.append({"details": pfa_result, "result": f"{avg}%"})
         # print_white(f"{years[0]} to {years[1]} = {avg}%")
