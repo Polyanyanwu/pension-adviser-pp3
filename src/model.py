@@ -115,3 +115,17 @@ def save_results(user: str, enq_result: dict):
     except ValueError as val_error:
         print_red(f"Error while saving enquiry: The error is - {val_error}")
         print_yellow("Please try again \n")
+
+
+def fetch_existing_results(user):
+    """ fetch all existing enquiry results
+    Returns:
+        list of dictionaries containing
+        the existing enquiry results
+    """
+    try:
+        worksheet = SHEET.worksheet(user)
+        existing_data = worksheet.get_all_records()
+    except gspread.WorksheetNotFound:
+        print_red("Sorry no data to display: Please run enquiry first")
+    return existing_data
