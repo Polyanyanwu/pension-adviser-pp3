@@ -123,11 +123,12 @@ def fetch_existing_results(user):
         list of dictionaries containing
         the existing enquiry results
     """
+    existing_data = []
     try:
         worksheet = SHEET.worksheet(user)
         existing_data = worksheet.get_all_records()
     except gspread.WorksheetNotFound:
-        print_red("Sorry no data to display: Please run enquiry first")
+        pass
     return existing_data
 
 

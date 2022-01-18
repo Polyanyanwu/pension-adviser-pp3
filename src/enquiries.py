@@ -292,7 +292,7 @@ def print_enquiry_result(results):
     """ print the enquiry result """
 
     if len(results) == 0:
-        print_cyan("No existing data to print. Run some enquiry first \n")
+        print_red("No existing data to print. Please run some enquiry first\n")
         return
     for result in results:
         print_white(f"{result['details']} :")
