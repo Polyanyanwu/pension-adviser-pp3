@@ -214,7 +214,15 @@ def get_fund_code(fund_type: int):
 
 
 def compute_results(fund_type, years: tuple, pfa):
-    """" test """
+    """ compute the average returns for the given
+        fund type, yeras and pfa 
+        Arguments:
+            fund_type : the fund type selected by user
+            years: the start and end year in a tuple
+            pfa: the selected PFA
+        Returns:
+            a dictionary of the computed results
+    """
     rates_data = fetch_return_rates()
     fund_code = get_fund_code(int(fund_type))
     results = []
@@ -226,9 +234,7 @@ def compute_results(fund_type, years: tuple, pfa):
         avg = compute_pfa_average(pfa_no, years, fund_code, rates_data)
         pfa_result = f"Average for {pfa[1]}, {fund_code} "
         pfa_result += f"{years[0]} to {years[1]}"
-        print_white(f"{pfa_result} = {avg}%")
         results.append({"details": pfa_result, "result": f"{avg}%"})
-        # print_white(f"{years[0]} to {years[1]} = {avg}%")
 
     # compute industry average
     filtered_data = list(filter(lambda item: int(item['year'])
@@ -237,17 +243,12 @@ def compute_results(fund_type, years: tuple, pfa):
                                 fund_code, rates_data))
     rates = [item['return_rate'] for item in filtered_data]
     avg = round(sum(rates)/len(rates), 2)
-    print_white(f"Industry Average for {fund_code}", "")
-    print_white(f"{years[0]} to {years[1]} = {avg}%")
 
     industry_result = f"Industry Average for {fund_code} "
     industry_result += f"{years[0]} to {years[1]}"
     results.append({"details": industry_result, "result": f"{avg}%"})
 
     best_pfa = determine_best_pfa_returns(years, fund_code, rates_data)
-    print_white(f"Best PFA for {fund_code} {years[0]} to {years[1]} = ", '')
-    print_yellow(f"{best_pfa[0]} with {best_pfa[1]}% returns")
-
     best_pfa_result = f"Best PFA for {fund_code} {years[0]} to {years[1]}"
     results.append({"details": best_pfa_result,
                     "result": f"{best_pfa[0]} with {best_pfa[1]}% returns"})
