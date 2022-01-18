@@ -41,7 +41,7 @@ def run_enquiry(user: str):
     result = compute_results(fund_type, start_end_years, pfa_selected)
     print_enquiry_result(result)
     print_yellow("\n Saving enquiry results ...")
-    save_results(user, result)
+    save_results(user.lower(), result)
     return user
 
 

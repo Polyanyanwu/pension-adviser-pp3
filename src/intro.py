@@ -117,7 +117,7 @@ def _print_menu_options():
 def validate_existing_user(user_name):
     """ check if worksheet exist """
 
-    if user_worksheet_exist(user_name):
+    if user_worksheet_exist(user_name.lower()):
         print_yellow(f"{user_name} already exists.\n")
         if confirm_yes_no("Are you a returning user?"):
             return True

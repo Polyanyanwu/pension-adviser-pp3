@@ -84,12 +84,12 @@ def save_results(user: str, enq_result: dict):
         enq_result: the enquiry result dictionary to be saved
     """
     try:
-        worksheet = SHEET.worksheet(user)
+        worksheet = SHEET.worksheet(user.lower())
         # retrieve old data
         existing_data = worksheet.get_all_values()
     except gspread.WorksheetNotFound:
         # create new worksheet if it is not existing
-        worksheet = SHEET.add_worksheet(title=user, rows=0, cols=0)
+        worksheet = SHEET.add_worksheet(title=user.lower(), rows=0, cols=0)
         existing_data = []
     all_data = existing_data
     data_set = set()
@@ -125,7 +125,7 @@ def fetch_existing_results(user):
     """
     existing_data = []
     try:
-        worksheet = SHEET.worksheet(user)
+        worksheet = SHEET.worksheet(user.lower())
         existing_data = worksheet.get_all_records()
     except gspread.WorksheetNotFound:
         pass
@@ -141,7 +141,7 @@ def delete_existing_results(user):
     """
     try:
         print_yellow("Deleting existing enquiry results ...")
-        worksheet = SHEET.worksheet(user)
+        worksheet = SHEET.worksheet(user.lower())
         worksheet.clear()
         print_green("Successfully deleted existing results...\n")
         return True
@@ -156,7 +156,7 @@ def user_worksheet_exist(user):
         if so, return True, if not return False
     """
     try:
-        SHEET.worksheet(user)
+        SHEET.worksheet(user.lower())
     except gspread.WorksheetNotFound:
         return False
     return True
