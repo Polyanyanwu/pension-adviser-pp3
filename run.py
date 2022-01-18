@@ -1,10 +1,8 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
-
-
-from src.intro import introduction, instruction_manager
-from src.utils import confirm_yes_no
+""" controlling module of the application
+    calls other modules to execute the
+    operations of the application
+"""
+from src.intro import introduction, instruction_manager, main_menu
 from src.enquiries import run_enquiry, print_enquiry_result
 from src.model import fetch_existing_results
 
@@ -12,13 +10,15 @@ user_name = introduction()
 print(f"Welcome {user_name}!")
 
 while True:
-    if confirm_yes_no("Would you like to go through the instructions?"):
+    user_action = main_menu()
+    if user_action == '9':
+        print("\nThank you for consulting the Nigerian Pension Adviser")
+        break
+    elif user_action == '1':
         instruction_manager()
-    run_enquiry(user_name)
-    if not confirm_yes_no("Would you like to make another enquiry?"):
-        if not confirm_yes_no("Would you like to display all your enquiries?"):
-            break
-        else:
-            print_enquiry_result(fetch_existing_results(user_name))
-            break
-print("Thank you for consulting the Nigerian Pension Adviser")
+    elif user_action == '2':
+        print_enquiry_result(fetch_existing_results(user_name))
+    elif user_action == '3':
+        run_enquiry(user_name)
+    elif user_action == '4':
+        print("delete_exiting_enquiry")

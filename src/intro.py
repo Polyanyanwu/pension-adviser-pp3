@@ -4,10 +4,10 @@ from time import sleep
 
 from getch import getch
 
-from src.color_prints import print_cyan, print_white
+from src.color_prints import print_cyan, print_white, print_yellow
 
 from src.username import Username
-
+from src.enquiries import validate_selection, confirm_entry
 from src.utils import confirm_yes_no
 
 
@@ -76,3 +76,35 @@ def instruction_manager():
         print_inst = confirm_yes_no("Would you like to repeat instructions?")
         if print_inst:
             print_instructions()
+
+
+def main_menu():
+    """ present options for the user to select """
+    _print_menu_options()
+    while True:
+        print_white("Please enter your choice", '')
+        print_yellow("1, 2, 3, 4, or 9")
+        menu_choice = input("").lower()
+        if validate_selection((1, 2, 3, 4, 9), menu_choice):
+            if confirm_entry(menu_choice):
+                break
+            else:
+                _print_menu_options()
+    return menu_choice
+
+
+def _print_menu_options():
+    """ display menu options to user """
+
+    print_cyan("Please choose an option on the menu ")
+    print_yellow("by inputting 1, 2, 3, 4 or 9")
+    print_yellow("1: ", "")
+    print("Go through the instructions")
+    print_yellow("2: ", "")
+    print("Print existing result of enquiries")
+    print_yellow("3: ", "")
+    print("Run new enquiry")
+    print_yellow("4: ", "")
+    print("Delete all existing enquiry results")
+    print_yellow("9: ", "")
+    print("Exit the application")
