@@ -294,6 +294,8 @@ def print_enquiry_result(results):
     if len(results) == 0:
         print_red("No existing data to print. Please run some enquiry first\n")
         return
+    print("")
     for result in results:
-        print_white(f"{result['details']} :")
+        print_white(f"{result['details']} :", "")
         print_yellow(f"{result['result']}")
+    print("")
