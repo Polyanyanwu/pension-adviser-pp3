@@ -4,6 +4,7 @@ data from the Google spreadsheet ofr the application
 """
 import gspread
 from google.oauth2.service_account import Credentials
+from src.color_prints import print_yellow, print_red, print_green
 
 # Credit to Code Institute for the approach to use google spreadsheet
 SCOPE = [
@@ -75,28 +76,42 @@ def fetch_return_rates():
 
 
 def save_results(user: str, enq_result: dict):
-    """ persist the result of the enquiry to the spreadsheet """
-    # all_sheet = ' '.join(SHEET.worksheets().title())
-    # print(all_sheet)
+    """
+    persist the result of the enquiry to the spreadsheet
+    if the worksheet exist, ensure saving only unique enquiries
+    Arguments:
+        user: the username to be used as worksheet name
+        enq_result: the enquiry result dictionary to be saved
+    """
     try:
         worksheet = SHEET.worksheet(user)
         # retrieve old data
         existing_data = worksheet.get_all_values()
-        print(existing_data)
-        # worksheet.clear()
-    except gspread.WorksheetNotFound as error:
+    except gspread.WorksheetNotFound:
+        # create new worksheet if it is not existing
         worksheet = SHEET.add_worksheet(title=user, rows=0, cols=0)
-        print(error)
+        existing_data = []
+    all_data = existing_data
     data_set = set()
-    print("existing data set")
-    for ind in range(1, len(existing_data)):
-        print(existing_data[ind])
-        data_set.add(existing_data[ind][0])
-    print("data set before ....")
-    print(data_set)
-    worksheet.append_row(list(enq_result[0].keys()))
-    for item in enq_result:
-        data_set.add(item["details"])
-        worksheet.append_row(list(item.values()))
-    print("data set after ....")
-    print(data_set)
+    try:
+        # add the existing data to a set to aviod saving an enquiry twice
+        for ind in range(1, len(existing_data)):
+            data_set.add(existing_data[ind][0])  # add only the detail
+        # add the new enquiry result to both set and all data
+        for item in enq_result:
+            data_set.add(item["details"])
+            all_data.append(list(item.values()))
+        # clear the existing data on the worksheet
+        worksheet.clear()
+        # write the header row of worksheet
+        worksheet.append_row(list(enq_result[0].keys()))
+        # iterate through the set and find the related data in all data
+        # and save to the excel spreadsheet
+        for detail in data_set:
+            equiv_data = list(filter(lambda result: result[0]
+                                     == detail, all_data))
+            worksheet.append_row(list(equiv_data)[0])
+        print_green("Successfully saved enquiry results...\n")
+    except ValueError as val_error:
+        print_red(f"Error while saving enquiry: The error is - {val_error}")
+        print_yellow("Please try again \n")
