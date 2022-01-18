@@ -1,4 +1,11 @@
-# **THE PENSION ADVISER**
+# Name of the Project <a id="name-of-project"></a>
+## **THE PENSION ADVISER**
+## Live Site <a id="live-site"></a>
+[Hosted Live Here](https://pension-adviser.herokuapp.com/)
+## Repository
+
+[View Repository Here](https://github.com/Polyanyanwu/pension-adviser-pp3)
+
 ## **Objective**
 
 Design and deploy an interactive Command Line (CLI) application that enables the user to gain insight into the performance rates of returns of Pension Fund Administrators (PFA) published by the National Pension Commission (PenCom) of Nigeria (pencom.gov.ng). This will assist contributors in the pension fund make informed decision on which PFA to chose as their retirement savings account fund manager based on performance rates of return over a period. The project shall be deployed through Heroku, run on a command line and programmed using Python.
