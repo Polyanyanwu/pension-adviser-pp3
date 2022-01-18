@@ -133,7 +133,8 @@ def validate_year(valid_years, year_to_validate):
         year_range = range(valid_years[0], valid_years[1]+1, 1)
         if year_input not in year_range:
             raise ValueError(
-                f"Your input must be in range {valid_years[0]} to {valid_years[1]}"
+                "Your input must be in range "
+                + f"{valid_years[0]} to {valid_years[1]}"
             )
     except ValueError as val_error:
         print_red(f"Invalid data: {val_error}, please try again.\n")
@@ -175,7 +176,8 @@ def get_pfa():
             print_yellow(ind, "")  # print pfa ID numbers in different color
             print_white(pfas[ind-1][2])  # print the pfa name
         choice = input("Please enter your choice: ")
-        if choice in extra_options or validate_selection((0, ) + pfa_options, choice):
+        if choice in extra_options \
+                or validate_selection((0, ) + pfa_options, choice):
             if choice == 'n':
                 pfa_set += 1
                 end_range = pfa_set * group_size + 1
@@ -185,7 +187,9 @@ def get_pfa():
                     tuple(range((pfa_set - 1) * group_size + 1, end_range, 1))
             elif choice == 'p':
                 pfa_set -= 1
-                pfa_options = tuple(range((pfa_set - 1) * group_size + 1, pfa_set * group_size + 1, 1))
+                pfa_options = tuple(range((pfa_set - 1)
+                                    * group_size + 1, pfa_set
+                                    * group_size + 1, 1))
             else:
                 if confirm_entry(choice):
                     break
