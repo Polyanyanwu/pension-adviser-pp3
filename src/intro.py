@@ -123,5 +123,6 @@ def validate_existing_user(user_name):
             return True
         else:
             print_cyan("Please chose a different user name.")
+            return False
     else:
-        return False
+        return True
