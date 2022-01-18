@@ -147,3 +147,15 @@ def delete_existing_results(user):
     except gspread.WorksheetNotFound:
         print_red("Sorry no data to delete: Please run enquiry first")
     return False
+
+
+def user_worksheet_exist(user):
+    """
+        check if a worksheet already exist for the user
+        if so, return True, if not return False
+    """
+    try:
+        SHEET.worksheet(user)
+    except gspread.WorksheetNotFound:
+        return False
+    return True

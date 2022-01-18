@@ -9,6 +9,7 @@ from src.color_prints import print_cyan, print_white, print_yellow
 from src.username import Username
 from src.enquiries import validate_selection, confirm_entry
 from src.utils import confirm_yes_no
+from src.model import user_worksheet_exist
 
 
 def introduction():
@@ -21,8 +22,11 @@ def introduction():
     print('Are you an interested person that wants to know more about')
     print('   returns on investments of pension assets in Nigeria?')
     print_cyan("Let’s find out which PFAs have best returns on pension funds\n")
-    user_name = Username()
-    return user_name.username
+
+    while True:
+        user_name = Username().username
+        if validate_existing_user(user_name):
+            return user_name
 
 
 def _print_intro_logo():
@@ -108,3 +112,16 @@ def _print_menu_options():
     print("Delete all existing enquiry results")
     print_yellow("9: ", "")
     print("Exit the application")
+
+
+def validate_existing_user(user_name):
+    """ check if worksheet exist """
+
+    if user_worksheet_exist(user_name):
+        print_yellow(f"{user_name} already exists.\n")
+        if confirm_yes_no("Are you a returning user?"):
+            return True
+        else:
+            print_cyan("Please chose a different user name.")
+    else:
+        return False

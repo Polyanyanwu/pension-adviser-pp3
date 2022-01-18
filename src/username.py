@@ -34,9 +34,9 @@ class Username:
             if profanity.contains_profanity(user_name):
                 raise ValueError("Profane word found")
 
-        except ValueError as e:
+        except ValueError as val_error:
             print_red(f"Invalid username {user_name}:", "")
-            print(f"{e}, please try again.\n")
+            print(f"{val_error}, please try again.\n")
             return False
 
         return True
