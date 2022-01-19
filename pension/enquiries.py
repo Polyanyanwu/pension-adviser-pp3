@@ -110,7 +110,8 @@ def get_years(fund_type: int):
         return None
 
     while True:
-        print_cyan(f"\nValid year range is {valid_years[0]} to {valid_years[1]}")
+        print()
+        print_cyan(f"Valid year range is {valid_years[0]} to {valid_years[1]}")
         start_year = input(" Please enter Start Year: ")
         if validate_year(valid_years, start_year):
             break
@@ -175,7 +176,8 @@ def get_pfa():
         print_white("I do not wish to select a PFA")
         for ind in pfa_options:
             print_yellow(ind, "")  # print pfa ID numbers in different color
-            print_white(pfas[ind-1][2])  # print the pfa name
+            # print the pfa name (full name and short name in brackets)
+            print_white(f"{pfas[ind-1][2]} ({pfas[ind-1][1]})")
         choice = input("Please enter your choice: ")
         if choice in extra_options \
                 or validate_selection((0, ) + pfa_options, choice):
@@ -286,7 +288,7 @@ def determine_best_pfa_returns(years, fund_code, rates_data):
     all_pfa_returns = []
     for pfa in pfas:
         avg = compute_pfa_average(pfa[0], years, fund_code, rates_data)
-        all_pfa_returns.append((pfa[2], avg))
+        all_pfa_returns.append((pfa[1], avg))
     best_pfa = max(all_pfa_returns, key=lambda returns: returns[1])
     return best_pfa
 
