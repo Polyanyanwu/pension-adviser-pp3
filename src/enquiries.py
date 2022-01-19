@@ -1,7 +1,8 @@
 """ run the enquiries the user wants on the pension returns on investment """
 
-from getch import getch
-from src.model import get_fund_years, fetch_pfas, fetch_return_rates, save_results
+import getch
+from src.model import get_fund_years, fetch_pfas,\
+    fetch_return_rates, save_results
 from src.color_prints import print_cyan, print_yellow, print_white, print_red
 
 
@@ -88,7 +89,7 @@ def confirm_entry(str_entered):
         print_red(f"Your entry {str_entered} differs from ", "")
         print_red(f"your confirmation {new_input}")
         print_cyan("Press any Key to try again...")
-        getch()
+        getch.getch()
         return False
     return True
 
@@ -215,7 +216,7 @@ def get_fund_code(fund_type: int):
 
 def compute_results(fund_type, years: tuple, pfa):
     """ compute the average returns for the given
-        fund type, yeras and pfa 
+        fund type, yeras and pfa
         Arguments:
             fund_type : the fund type selected by user
             years: the start and end year in a tuple

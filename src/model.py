@@ -1,5 +1,5 @@
 """
-contains functions to use the Google API to read and update 
+contains functions to use the Google API to read and update
 data from the Google spreadsheet ofr the application
 """
 import gspread
