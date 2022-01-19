@@ -4,7 +4,7 @@ data from the Google spreadsheet ofr the application
 """
 import gspread
 from google.oauth2.service_account import Credentials
-from src.color_prints import print_yellow, print_red, print_green
+from pension.color_prints import print_yellow, print_red, print_green
 
 # Credit to Code Institute for the approach to use google spreadsheet
 SCOPE = [

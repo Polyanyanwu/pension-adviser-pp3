@@ -2,7 +2,7 @@
 
 from better_profanity import profanity  # ensure profane words are disallowed
 
-from src.color_prints import print_cyan, print_red
+from pension.color_prints import print_cyan, print_red
 
 
 class Username:

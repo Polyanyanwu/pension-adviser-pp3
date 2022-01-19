@@ -1,9 +1,10 @@
 """ run the enquiries the user wants on the pension returns on investment """
 
 import getch
-from src.model import get_fund_years, fetch_pfas,\
+from pension.model import get_fund_years, fetch_pfas,\
     fetch_return_rates, save_results
-from src.color_prints import print_cyan, print_yellow, print_white, print_red
+from pension.color_prints import print_cyan, print_yellow,\
+    print_white, print_red
 
 
 def _display_fund_choices():

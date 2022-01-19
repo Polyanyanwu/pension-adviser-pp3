@@ -4,12 +4,12 @@ from time import sleep
 
 import getch
 
-from src.color_prints import print_cyan, print_white, print_yellow
+from pension.color_prints import print_cyan, print_white, print_yellow
 
-from src.username import Username
-from src.enquiries import validate_selection, confirm_entry
-from src.utils import confirm_yes_no
-from src.model import user_worksheet_exist
+from pension.username import Username
+from pension.enquiries import validate_selection, confirm_entry
+from pension.utils import confirm_yes_no
+from pension.model import user_worksheet_exist
 
 
 def introduction():

@@ -2,9 +2,9 @@
     calls other modules to execute the
     operations of the application
 """
-from src.intro import introduction, instruction_manager, main_menu
-from src.enquiries import run_enquiry, print_enquiry_result
-from src.model import fetch_existing_results, delete_existing_results
+from pension.intro import introduction, instruction_manager, main_menu
+from pension.enquiries import run_enquiry, print_enquiry_result
+from pension.model import fetch_existing_results, delete_existing_results
 
 user_name = introduction()
 print(f"Welcome {user_name}!")

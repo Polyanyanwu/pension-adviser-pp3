@@ -3,7 +3,7 @@ Utility module to contain general functions
 1. confirm_yes_no function to display a prompt and obtain a Y or N confirmation
 """
 
-from src.color_prints import print_cyan, print_white, print_red
+from pension.color_prints import print_cyan, print_white, print_red
 
 
 def confirm_yes_no(prompt: str):
