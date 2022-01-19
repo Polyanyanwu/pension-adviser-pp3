@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/Polyanyanwu/pension-adviser-pp3/main/assets/images/favicon-32x32.png">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://raw.githubusercontent.com/Polyanyanwu/pension-adviser-pp3/main/assets/images/favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/xterm.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/addons/attach/attach.js"></script>
@@ -28,15 +30,34 @@
             align-items: center;
             width: 100%;
         }
+
         #main-content {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
         }
+
+        header {
+            width: 100%;
+            font-family: 'Press Start 2P', cursive;
+            background-color: #000;
+            color: #05668d;
+            box-shadow: .5em .5em 1em #028090, -.5em .5em 1em #028090, .5rem -.5em 1em #028090,
+                -.5em -.5em 1em #028090;
+            letter-spacing: 2px;
+            padding: 0.2em;
+            margin: .2em;
+        }
+
+        h1 {
+            color: #05668d;
+        }
+
         footer {
             text-align: center;
         }
+
         .xterm {
             font-feature-settings: "liga"0;
             position: relative;
