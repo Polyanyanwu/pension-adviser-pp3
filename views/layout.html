@@ -62,8 +62,9 @@
         footer {
             color: #05668d;
             text-align: center;
-            bottom: 2px;
-            position: fixed;
+            margin: 0 auto;
+            position: sticky;
+            top: 100vh;
         }
 
         .xterm {
@@ -206,12 +207,19 @@
         button {
             width: 200px;
             height: 40px;
-            background-color: #E84610;
+            background-color: #028090;
             border: 1px solid grey;
             color: white;
             text-transform: uppercase;
             margin: 10px;
             border-radius: 8px;
+        }
+
+        button:hover {
+            background-color: #02C39A;
+            border: 1px solid #028090;
+            color: whitesmoke;
+            cursor: pointer;
         }
     </style>
 </head>
