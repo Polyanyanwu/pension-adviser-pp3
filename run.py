@@ -7,7 +7,7 @@ from pension.enquiries import run_enquiry, print_enquiry_result
 from pension.model import fetch_existing_results, delete_existing_results
 
 user_name = introduction()
-print(f"Welcome {user_name}!")
+print(f"\n Welcome {user_name}!")
 
 while True:
     user_action = main_menu()

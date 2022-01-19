@@ -56,7 +56,7 @@ def get_fund_type():
     _display_fund_choices()
     while True:
         print_white("Please enter your choice", '')
-        print_yellow("1, 2, 3, or 4")
+        print_yellow("1, 2, 3, or 4 : ", "")
         fund_choice = input("")
         if validate_selection((1, 2, 3, 4), fund_choice):
             if confirm_entry(fund_choice):
@@ -110,13 +110,13 @@ def get_years(fund_type: int):
         return None
 
     while True:
-        print_cyan(f"Valid year range is {valid_years[0]} to {valid_years[1]}")
-        start_year = input("Please enter Start Year: ")
+        print_cyan(f"\nValid year range is {valid_years[0]} to {valid_years[1]}")
+        start_year = input(" Please enter Start Year: ")
         if validate_year(valid_years, start_year):
             break
     while True:
         print_cyan(f"Valid year range is {valid_years[0]} to {valid_years[1]}")
-        end_year = input("Please enter End Year: ")
+        end_year = input(" Please enter End Year: ")
         if validate_year(valid_years, end_year):
             if int(start_year) > int(end_year):
                 print_red("End Year must be less or equal to Start Year")
@@ -159,6 +159,7 @@ def get_pfa():
     pfa_options = tuple(range(pfa_set, pfa_set+5, 1))
     choice = None
     while True:
+        print()
         print_cyan("Please select a PFA by typing the number beside the Name")
         # check if to display instruction for next or previous
         if pfa_set == 1:
@@ -297,6 +298,8 @@ def print_enquiry_result(results):
         print_red("No existing data to print. Please run some enquiry first\n")
         return
     print("")
+    print_cyan("              Enquiry Results")
+    print_cyan("              ===============")
     for result in results:
         print_white(f"{result['details']} :", "")
         print_yellow(f"{result['result']}")

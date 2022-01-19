@@ -16,11 +16,11 @@ def introduction():
     """ print initial welcome message and obtain username for the user"""
 
     _print_intro_logo()
-    sleep(3)
+    sleep(2)
     print_cyan('Welcome Dear Pension Investment Enthusiast!\n')
-    print('Do you operate a Retirement Savings Account in Nigeria? Or')
-    print('Are you an interested person that wants to know more about')
-    print('returns on investments of pension assets in Nigeria?')
+    print_white('Do you operate a Retirement Savings Account in Nigeria? Or')
+    print_white('Are you an interested person that wants to know more about')
+    print_white('returns on investments of pension assets in Nigeria?')
     print_cyan("Let’s know which PFAs have best returns on pension funds\n")
 
     while True:
@@ -40,12 +40,14 @@ def _print_intro_logo():
     print_white("OO           OO           OO     OO  OO      OO         OO ")
     print_cyan("OO	      OO           OO      OO OO     OO           OO")
     print_white("OO	      OOOOOOOOO    OO         OO    OO             OO\n")
-    print_white("         THE NIGERIAN PENSION ADVISER\n")
+    print_cyan("             THE NIGERIAN PENSION ADVISER")
+    print_cyan("             ============================\n")
 
 
 def print_instructions():
     """print the instructions to guide the user """
 
+    print()
     print_cyan("                THE INSTRUCTIONS")
     print_cyan("               ===================")
     print_white("The Pension Adviser will give you insights on the")
@@ -87,7 +89,7 @@ def main_menu():
     _print_menu_options()
     while True:
         print_white("Please enter your choice", '')
-        print_yellow("1, 2, 3, 4, or 9")
+        print_yellow("1, 2, 3, 4, or 9 : ", '')
         menu_choice = input("").lower()
         if validate_selection((1, 2, 3, 4, 9), menu_choice):
             if confirm_entry(menu_choice):
@@ -118,7 +120,7 @@ def validate_existing_user(user_name):
     """ check if worksheet exist """
 
     if user_worksheet_exist(user_name.lower()):
-        print_yellow(f"{user_name} already exists.\n")
+        print_yellow(f"{user_name} already exists.")
         if confirm_yes_no("Are you a returning user?"):
             return True
         else:

@@ -18,7 +18,7 @@ def confirm_yes_no(prompt: str):
 
     yes_no = ('y', 'n')
     print_white(f"{prompt}: ", "")
-    print_cyan("('y' or 'n')")
+    print_cyan("('y' or 'n')", "")
     answer = input().strip().lower()
 
     while answer not in yes_no:
