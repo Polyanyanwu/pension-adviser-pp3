@@ -2,7 +2,7 @@
 
 from time import sleep
 
-import getch
+from getch import getch
 
 from pension.color_prints import print_cyan, print_white, print_yellow
 
@@ -54,7 +54,7 @@ def print_instructions():
     print_white("from the list of available Fund Types.")
     print_white("Select a Fund Type by inputting number listed beside it")
     print_cyan("Press any Key to continue...")
-    getch.getch()
+    getch()
 
     print_white("You will be required to input the Start Year and End Year")
     print_white("of your interest. E.g Start Year: 2016  End Year: 2018.")
@@ -62,7 +62,7 @@ def print_instructions():
     print_white("the data will be average for the period entered")
     print_white("You will be notified of the valid years from data available.")
     print_cyan("Press any Key to continue...")
-    getch.getch()
+    getch()
 
     print_white("Next you will select a Pension Fund Administrator")
     print_white("You may chose no PFA, in that case you will get")
