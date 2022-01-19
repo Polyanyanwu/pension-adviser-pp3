@@ -108,8 +108,8 @@ def save_results(user: str, enq_result: dict):
         # iterate through the set and find the related data in all data
         # and save to the excel spreadsheet
         for detail in data_set:
-            equiv_data = list(filter(lambda result: result[0]
-                                     == detail, all_data))
+            equiv_data = list(filter(lambda result, key=detail: result[0]
+                                     == key, all_data))
             worksheet.append_row(list(equiv_data)[0])
         print_green("Successfully saved enquiry results...\n")
     except ValueError as val_error:
