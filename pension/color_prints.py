@@ -9,29 +9,29 @@ the next print is done on same line
 
 def print_red(data, newline="\n"):
     """print string data in red color """
-    print("\033[91m {}\033[00m" .format(data), end=newline)
+    print(f'\033[91m {data}\033[00m', end=newline)
 
 
 def print_green(data, newline="\n"):
     """print string data in green color """
-    print("\033[92m {}\033[00m" .format(data), end=newline)
+    print(f"\033[92m {data}\033[00m", end=newline)
 
 
 def print_yellow(data, newline="\n"):
     """print string data in yellow color """
-    print("\033[93m {}\033[00m" .format(data), end=newline)
+    print(f"\033[93m {data}\033[00m", end=newline)
 
 
 def print_cyan(data, newline: str = "\n"):
     """print string data in Cyan color """
-    print("\033[96m {}\033[00m" .format(data), end=newline)
+    print(f"\033[96m {data}\033[00m", end=newline)
 
 
 def print_blue(data, newline="\n"):
     """print string data in Blue color """
-    print("\033[34m {}\033[00m" .format(data), end=newline)
+    print(f"\033[34m {data}\033[00m", end=newline)
 
 
 def print_white(data, newline="\n"):
     """print string data in White color """
-    print("\u001b[37m {}\033[00m" .format(data), end=newline)
+    print(f"\u001b[37m {data}\033[00m", end=newline)
