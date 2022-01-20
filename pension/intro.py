@@ -30,7 +30,7 @@ def introduction():
 
 
 def _print_intro_logo():
-    """ print the introdution logo """
+    """ print the introduction logo """
 
     print_cyan("OOOOOOOOO    OOOOOOOOO    OO         OO           OO")
     print_white("OO     OO    OO           OO OO      OO          OO OO")

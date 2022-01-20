@@ -94,7 +94,7 @@ def save_results(user: str, enq_result: dict):
     all_data = existing_data
     data_set = set()
     try:
-        # add the existing data to a set to aviod saving an enquiry twice
+        # add the existing data to a set to avoid saving an enquiry twice
         for ind in range(1, len(existing_data)):
             data_set.add(existing_data[ind][0])  # add only the detail
         # add the new enquiry result to both set and all data

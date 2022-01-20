@@ -220,7 +220,7 @@ def get_fund_code(fund_type: int):
 
 def compute_results(fund_type, years: tuple, pfa):
     """ compute the average returns for the given
-        fund type, yeras and pfa
+        fund type, years and pfa
         Arguments:
             fund_type : the fund type selected by user
             years: the start and end year in a tuple

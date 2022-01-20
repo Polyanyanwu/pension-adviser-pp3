@@ -152,7 +152,7 @@ I have tested all the Python files using [PEP8 online](http://pep8online.com) to
 I chose to leave the two files with the warning since the [PEP8 Style Guide](https://www.python.org/dev/peps/pep-0008/#should-a-line-break-before-or-after-a-binary-operator) supports writing code in a more reader friendly manner as I have done.
 
 
-### **Python Testing during Development
+### **Python Testing during Development**
 
 I used two Python linters during the development of this application.
 -   [Flake8](https://flake8.pycqa.org/en/latest/)

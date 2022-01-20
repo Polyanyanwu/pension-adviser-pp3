@@ -10,7 +10,7 @@ def confirm_yes_no(prompt: str):
     """ display a prompt and let user confirm by typing y or n
 
         Arguments:
-            prompt: this will be the message that needa a Yes or No
+            prompt: this will be the message that needs a Yes or No
             confirmation from user
         Returns:
             boolean: True if user confirms "y" False if 'n'.

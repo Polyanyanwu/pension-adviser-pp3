@@ -46,7 +46,7 @@ class Username:
         The name should be with alphanumeric characters and spaces,
         between 3 and 15 characters.
         The function checks for profane words using `better_profanity.
-        The prompt for username is repeated until valid username is inputed
+        The prompt for username is repeated until valid username is inputted
 
         Returns:
             string of validated username
