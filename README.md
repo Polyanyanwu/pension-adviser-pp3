@@ -143,6 +143,44 @@ In this model when additional data becomes available, it could be added to the E
 
 
 ## **Testing**
+### **PEP8 Testing**
+
+I have tested all the Python files using [PEP8 online](http://pep8online.com) tool and the outcome is displayed [here](https://github.com/Polyanyanwu/pension-adviser-pp3/blob/efb5797babbc31d01c5811828bbcd102a5cb7775/readme-docs/pep8_validation.md). Only the W503 warning came up on two of the Python files.
+
+![W503 warning](/readme-docs/pep8_warning.png)
+
+I chose to leave the two files with the warning since the [PEP8 Style Guide](https://www.python.org/dev/peps/pep-0008/#should-a-line-break-before-or-after-a-binary-operator) supports writing code in a more reader friendly manner as I have done.
+
+
+### **Python Testing during Development
+
+I used two Python linters during the development of this application.
+-   [Flake8](https://flake8.pycqa.org/en/latest/)
+-   [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+
+The two linters assisted me a lot to write code free of syntax errors and well structured. As a result there are no warnings left in any of the Python files.
+
+### **Manual Testing**
+I have done comprehensive manual testing both during the development of the application and after it had been deployed. The documented manual testing is available [HERE](https://github.com/Polyanyanwu/pension-adviser-pp3/blob/54afbf3ee5a9c90724686643eaf445e69c42a39a/readme-docs/funtionality_test.md).
+
+### **HTML W3C Validator**
+
+The W3C validator was used to test the HTML and CSS, and no errors were found.
+
+**HTML Validation Outcome**
+
+![W3C Validation HTML](/readme-docs/html_validation.png)
+
+**CSS Validation Outcome**
+
+![W3C Validation CSS](/readme-docs/css_validation.png)
+
+### **Lighthouse**
+
+Lighthouse testing was carried out on the deployed site with satisfactory result.
+
+![Lighthouse test](/readme-docs/lighthouse.png)
+
 
 ## **Bugs**
 
