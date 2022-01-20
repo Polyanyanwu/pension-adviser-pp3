@@ -11,10 +11,10 @@
 [View Repository Here](https://github.com/Polyanyanwu/pension-adviser-pp3)
 
 ## **Table of Contents**
-
-  - [**THE PENSION ADVISER**](#the-pension-adviser)
-  - [Live Site <a id="live-site"></a>](#live-site-)
+- [**THE PENSION ADVISER**](#the-pension-adviser)
+  - [Live Site](#live-site)
   - [Repository](#repository)
+  - [**Table of Contents**](#table-of-contents)
   - [**Objective**](#objective)
   - [**Aims of the Site**](#aims-of-the-site)
   - [**User Experience Design**](#user-experience-design)
@@ -32,6 +32,9 @@
     - ["*Delete all existing enquiry results*"](#delete-all-existing-enquiry-results)
   - [**Data Model**](#data-model)
   - [**Technologies Used**](#technologies-used)
+    - [**Python Packages**](#python-packages)
+    - [**Ancillary Technologies**](#ancillary-technologies)
+    - [**VSCode Extensions Used**](#vscode-extensions-used)
   - [**Testing**](#testing)
     - [**PEP8 Testing**](#pep8-testing)
     - [**Python Testing during Development**](#python-testing-during-development)
@@ -186,7 +189,7 @@ In this model when additional data becomes available, it could be added to the E
 
 ## **Technologies Used**
 
-### Python Packages
+### **Python Packages**
 
 - [gspread](https://pypi.org/project/gspread/) : enables communication with Google Sheets
 
@@ -199,6 +202,33 @@ In this model when additional data becomes available, it could be added to the E
   - profanity: checks that words are not profane
 - [py-getch](https://github.com/joeyespo/py-getch)
   - getch: used to enable *'Press any key to continue...'* function
+
+### **Ancillary Technologies**
+
+- *[Balsamiq](https://balsamiq.com/)*
+  - Balsamiq was used to create  the Wireframe for the application.
+- *[Font Awesome](https://fontawesome.com/)*
+  - The application used icons from Font Awesome version at the footer.
+- *[Google Fonts](https://fonts.google.com/)*
+  - Google Fonts was used for the Page Title.
+- *[Multi Device Mockup Generator](https://techsini.com/multi-mockup/index.php)*
+  - The Mockup image at the top of the README was created using the Techsini website
+- *[PEP8 validation](http://pep8online.com/)*
+  - A Python code online validation application.
+- *[W3C Markup Validation Service](validator.w3.org)*
+  - A free application that was used to check the HTML and CSS files for errors.
+- *[Visual Studio Code](https://code.visualstudio.com/)*
+  - The code editor used for the application development. With numerous [extensions](#vscode-extensions-used)
+  available it is an excellent environment for writing efficient codes.
+
+### **VSCode Extensions Used**
+
+Some VSCode extensions were used during the development of the application. They are:
+
+- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+- [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+- [markdown lint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
 
 ## **Testing**
 
@@ -246,15 +276,15 @@ Lighthouse testing was carried out on the deployed site with satisfactory result
 
 ### **Current Bugs**
 
-* Another user could access the enquiry results of someone if the user name is known
+- Another user could access the enquiry results of someone if the user name is known
 
 *This is due to the fact that the application is not using any means of ensuring unique identity of a user. There is no password maintained in the application as it is presently. To resolve this could have involved maintaining passwords and associating them sith the user name. Full validation of passwords, hashing, expiration and all that goes into password maintenance would require more time than is available to me for this project.*
 
-* The application is not responsive in mobile devices and small screens.
+- The application is not responsive in mobile devices and small screens.
 
 *This seem to be from the setup of the terminal template and beyond scope for me to deal with. As a result the program is easily usable only on computer screens*
 
-* The application seems to stop accepting input after some inactive time
+- The application seems to stop accepting input after some inactive time
 
 *Again this seems to be from the terminal setup and beyond my scope*
 
