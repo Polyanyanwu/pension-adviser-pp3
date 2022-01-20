@@ -35,7 +35,7 @@ class Username:
                 raise ValueError("Profane word found")
 
         except ValueError as val_error:
-            print_red(f"Invalid username {user_name}:", "")
+            print_red(f"Invalid user name {user_name}:", "")
             print(f"{val_error}, please try again.\n")
             return False
 
@@ -53,10 +53,10 @@ class Username:
         """
 
         while True:
-            print_white("Lets meet you, enter a user name")
+            print_white("Let's meet you, enter a user name")
             print_cyan("A-Z, a-z, 0-9 & spaces are permitted")
-            print_cyan("Username should be between 3 and 15 characters")
-            print_cyan("leading & training spaces will be removed.")
+            print_cyan("User name should be between 3 and 15 characters")
+            print_cyan("leading & trailing spaces will be removed.")
             user_name = input(" Please type in a user name: ")
             if self._validate_username(user_name):
                 break
