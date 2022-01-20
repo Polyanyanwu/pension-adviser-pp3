@@ -139,7 +139,10 @@ The second Excel Sheet contains data for each PFA, Fund type, Year and the retur
 
 In this model when additional data becomes available, it could be added to the Excel sheet and be used in the computation.
 
-## ** Testing **
+## **Technologies Used** 
+
+
+## **Testing**
 
 ## **Bugs**
 
@@ -177,3 +180,7 @@ Resolved by initializing the existing data to an empty list `existing_data = []`
 5. Newly created user was not able to continue using the application
 
 Resolved by returning `True` to `validate_existing_user` function via Commit [e795527](https://github.com/Polyanyanwu/pension-adviser-pp3/commit/e795527120cea7643413a47dd85aadd577f31000)
+
+## **Deployments**
+
+## **Credits**
