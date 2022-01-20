@@ -76,12 +76,34 @@ Before the menu is displayed, the user is prompted to enter a user name. A user 
 
 When a user inputs an option 1, 2, 3, 4 or 9 the user is requested to iput the choice a second time to confirm. If the confirmation is same as the initial input, the option is accepted and the desired feature is executed. If the confirmation fails the menu is displayed once more.
 
-The "*Go through the Instructions*" feature
+### "*Go through the Instructions*"
+
 This option, when confirmed by the user, displays the instructions for using the application.
 
 ![Instructions](/readme-docs/go_thru_instructions.png)
 
 The instructions are displayed in sets of 5 lines. The user is prompted to press any key to continue to see the next set of instructions. At the end of the instructions, the user is requested to repeat the instructions or not. If not repeating, the menu is displayed once more.
+
+### "*Print existing result of enquiries*"
+
+This feature enables the user to retrieve and view the previous result of enquiries made on the application. This is used for both the enquiries made during the current user session or enquiries made previously provided the same user name is used.
+
+![Enquiry Results](/readme-docs/enquiry_result.png)
+
+The application uses the `set` feature of Python to ensure that the no enquiry result item is saved more than once in the Worksheet of the user. The data is static and historical, thus not expected to change over time.
+
+
+### "*Run new enquiry*"
+
+### "*Delete all existing enquiry results*"
+
+A user may decide to delete all previous enquiries made on the application by selecting option 4. The application will proceed and clear all the enquiries saved on the user's Worksheet. 
+
+![Delete Enquiries](/readme-docs/delete_enquiry.png)
+
+Message is displayed at the starting of the deletion and after successful deletion or otherwise. If there are no enquiry results to delete, the user is notified.
+
+
 
 
 ## **Data Model**
