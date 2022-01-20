@@ -95,6 +95,22 @@ The application uses the `set` feature of Python to ensure that the no enquiry r
 
 ### "*Run new enquiry*"
 
+The Run new enquiry feature is selected by typing 3 when the menu is displayed. This is the main feature that enables the user input the fund type of interest, the start and end year, the PFA of interest before the eqnwuiry result is displayed.
+
+![Select Fund Type](/readme-docs/select_fund.png)
+
+After selecting a fund type, the user is presented with prompts for the start and end years. The performance data for the PFAs are stored per fund type and year. The application goes through the data and determines the available year range of data displayed to the user. The user input is validated against the valid years displayed. 
+
+![Select Year](/readme-docs/select_year.png)
+
+The PFA is displayed including the option 0 for No PFA. The instruction includes n for next set of PFAs and p for previous set of PFAs. The application ensures the p and n are available only when useful, e.g for the first set of PFAs the p is not available.
+
+![Select PFA](/readme-docs/select_pfa.png)
+
+After selecting a PFA or No PFA, the application displays the result of the enquiry and a message for saving the enquiry result. A success or failure message is displayed afterwards.
+
+![Save enquiry](/readme-docs/save_enquiry.png)
+
 ### "*Delete all existing enquiry results*"
 
 A user may decide to delete all previous enquiries made on the application by selecting option 4. The application will proceed and clear all the enquiries saved on the user's Worksheet. 
