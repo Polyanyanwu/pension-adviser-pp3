@@ -122,3 +122,41 @@ The second Excel Sheet contains data for each PFA, Fund type, Year and the retur
 ![Performance Data Model for Computation](/readme-docs/return-rates.png)
 
 In this model when additional data becomes available, it could be added to the Excel sheet and be used in the computation.
+
+
+## **Bugs**
+
+### **Current Bugs**
+- Another user could access the enquiry results of somone if the user name is known
+
+*This is due to the fact that the application is not using any means of ensuring unique identity of a user. There is no password maintained in the application as it is presently. To resolve this could have involved maintaining passwords and associating them sith the user name. Full validation of passwords, hashing, expiration and all that goes into password maintenance would require more time than is available to me for this project.*
+
+- The application is not responsive in mobile devices and small screens.
+
+*This seem to be from the setup of the terminal template and beyond scope for me to deal with. As a result the program is easily usable only on computer screens*
+
+- The application seems to stop accepting input after some inactive time
+
+*Again this seems to be from the terminal setup and beyond my scope*
+
+### **Resolved Bugs**
+
+1. Delete existing result of enquiry resturns successful even on an empty worksheet.
+
+This was resolved with Commit [4629107](https://github.com/Polyanyanwu/pension-adviser-pp3/commit/462910724d333966d89fa417e001496b3b4f6ffe) by deleting the Worksheet for the user instead of only clearing the content. The intended behaviour is to delete the Worksheet, then the application will return the correct message.
+
+2. I was getting warning of formating a regular string which could be done with f-string.
+
+This was resolved in Commit [7aaec39](https://github.com/Polyanyanwu/pension-adviser-pp3/commit/7aaec39ba050335a441159358957d0ac0bfc6333) by changing the statement using f-string.
+
+3. User name was case sensitive making the application create a new user due to case sensitivity
+
+Resolution was via Commit [4a5d13](https://github.com/Polyanyanwu/pension-adviser-pp3/commit/4a5d13f531f2a51aa9e4c85adac07bf5fd28ce42) which cahnged user names to lower case before saving the Worksheet.
+
+4. The application was crashing when a user try to print empty existing data
+
+Resolved by initializing the existing data to an empty list `existing_data = []` via Commit [31c8be9](https://github.com/Polyanyanwu/pension-adviser-pp3/commit/31c8be957b5f3f9c24915eab4ad84050891a0f0a)
+
+5. Newly created user was not able to continue using the application
+
+Resolved by returning `True` to `validate_existing_user` function via Commit [e795527](https://github.com/Polyanyanwu/pension-adviser-pp3/commit/e795527120cea7643413a47dd85aadd577f31000)
