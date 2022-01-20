@@ -140,13 +140,14 @@ def delete_existing_results(user):
         True if successful or False if not
     """
     try:
+        print()
         print_yellow("Deleting existing enquiry results ...")
         worksheet = SHEET.worksheet(user.lower())
-        worksheet.clear()
+        SHEET.del_worksheet(worksheet)
         print_green("Successfully deleted existing results...\n")
         return True
     except gspread.WorksheetNotFound:
-        print_red("Sorry no data to delete: Please run enquiry first")
+        print_red("Sorry no data to delete: Please run enquiry first\n")
     return False
 
 
