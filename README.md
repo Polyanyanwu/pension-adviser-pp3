@@ -1,5 +1,6 @@
 # Name of the Project <a id="name-of-project"></a>
 ## **THE PENSION ADVISER**
+![Site Mockup](/readme-docs/mockup.png)
 ## Live Site <a id="live-site"></a>
 [Hosted Live Here](https://pension-adviser.herokuapp.com/)
 ## Repository
