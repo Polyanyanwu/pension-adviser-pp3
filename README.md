@@ -30,6 +30,7 @@ The aim of this site is to provide an interactive application to enable the user
 The user stories that will guide the development of this application include:
 1. As a contributor in the pension industry in Nigeria I like to know the performance of each retirement savings account fund type for a fund manager (PFA) of my interest to enable me decide to change my fund type or the fund manager.
 2. As a citizen interested in the economic growth of Nigeria I like to know the pension industry performance over a given period and fund type.
+3. As a user of the application I like to view my previous enquiries.
 
 ### **Initial Design Concept**
 My intention is to guide the contributor in the pension industry in Nigeria to easily find out which PFAs are best performing in terms of returns on investment. This will be achieved by analysing the data that PenCom (the regulator of the industry) posted on its website. It is a simple design that would ask the user the PFA and fund of interest and reply with the performance of that PFA plus the industry performance. It will also produce which PFA has the best performance for a given fund. I intend to give the user the option to select the period of interest, that is starting year and ending year for the analysis. Since the data available is limited, the user will be guided on the years that are available.
@@ -40,7 +41,16 @@ The application is of a Command Line type with limitations on the width and heig
 ![Application Wirefrme](/readme-docs/pp3_wireframe.png)
 
 #### **Color Scheme**
-In order to enhance the user experience I chose to apply some colors available through the `lazyme` package.
+In order to enhance the user experience within the Python terminal, I chose to apply some colors available through the color escape codes of Python. I implemented a module that has functions for the colors I used in the application.
+
+For the look and feel of the surrounding areas of the Python terminal, I chose a color scheme through the [Colors.co] (https://coolors.co/). The colors pallete used is shown below:
+![Color Pallete](/readme-docs/color_scheme.png)
+
+#### **Fonts**
+The font for the Title is "Press Start 2P", which was chosen from Google fonts. This font looks classic to me and fitting for a Command Line application of this nature.
+
+#### **Background Image**
+The background image was downloaded from [PngTree](https://pngtree.com/free-backgrounds). It contains an image of someone using a laptop and different sizes of up arrow. These invoke feelins of an investment adviser and growth of funds, which I consider apt for this application.
 
 #### **Flowchart**
 The initial flowchart of the application has been produced to guide the application development. It may differ slightly from the final application as more insights may be gathered as the application is being developed.
@@ -49,44 +59,30 @@ The initial flowchart of the application has been produced to guide the applicat
 
 ## **Features**
 
-### Username 
-The name of the user shall be requested as the first data after the Welcome message. This shall be static and not change throughout the interaction with the user. Username shall be alphanumeric and between 3 and 15 characters long. This shall be validated by the application.
+***I like to know the performance of each retirement savings account fund type for a fund manager*** 
+***As a citizen interested in the economic growth of Nigeria I like to know the pension industry performance over a given period and fund type***
 
-Please enter your name: Poly
+To achieve this User Story the application shall request the fund type, start and end year of interest and PFA. If the PFA is not chosen, as is the case with second User Story above, only the industry average performance for the Fund type is computed and displayed. The application shall display the performance of the selected PFA, the industry average performance for the fund type chosen and the best fund manager for the fund type.
 
-### I like to know the performance of each retirement savings account fund type for a fund manager 
+***As a user of the application I like to view my previous enquiries.***
 
-1. To achieve this User Story the application shall request the year of interest. A single year or range of years with start year and end year.<br>
+To achieve this requirement it is necessary to input a user name and persist the result of the user enquiries to be able to retrieve them subsequently.
 
-	Enter the Start Year of interest:<br>
-	(Available data is from 2016 to 2019) - this year range shall be determined from the data available.<br>
+The above requirements led to the design of the main menu of the application given below:
 
-	Enter the End Year of interest (leave blank if same as Start Year):<br>
-	Confirmation and validation checks shall be carried out.
+![Application Main Menu](/readme-docs/main_menu.png)
 
-2. Select PFA of interest:
+Before the menu is displayed, the user is prompted to enter a user name. A user name is mandatory as it is used by the application as the name of the Worksheet to be used in saving the results of the user enquiries. If same user name is provided as an existing one, the user is requested to confirm if he/she is returing user. If not returning, another name is requested from the user. The user name is not case sensitive, is required to be alphanumeric, between 3 and 15 characters and is not a profane word.
 
-	1.	AIICO Pension Managers Limited
-	2.	APT Pension Funds Managers Limited
-	3.	ARM Pension Managers Limited
-	4.	AXA Mansard Pensions Limited
-	5.	Crusader Sterling Pension Limited
-	If PFA is not selected, analysis will be based on industry wide data.
+When a user inputs an option 1, 2, 3, 4 or 9 the user is requested to iput the choice a second time to confirm. If the confirmation is same as the initial input, the option is accepted and the desired feature is executed. If the confirmation fails the menu is displayed once more.
 
-3. Select fund type of interest:
+The "*Go through the Instructions*" feature
+This option, when confirmed by the user, displays the instructions for using the application.
 
-	1.	Fund I: Retirement Savings Account Fund I (An Active Contributor who is below 50 yrs of age and chooses for his contribution to be invested in this fund)
-	2.	Fund II: Retirement Savings Account Fund II (default fund for all Active Contributors who are below 50 yrs of age )
-	3.	Fund III: Retirement Savings Account Fund III (default fund for all Active Contributors who are  50 yrs and above ) 
-	4.	Fund IV:  Retirement Savings Account Fund IV (Fund for Retirees only)
-Confirm selection: 
+![Instructions](/readme-docs/go_thru_instructions.png)
 
-Average return on investment for Fund I (2018 – 2019) and PFA  yyy is  : xx.xx   (available if PFA was selected)
-Pension Industry Average return on investment for Fund I (2018 – 2019) is: xx.xx
-Best performing PFA for Fund I (2018 – 2019) is : pfa name with xx.xx rate of return.
-Thank you for using the application
+The instructions are displayed in sets of 5 lines. The user is prompted to press any key to continue to see the next set of instructions. At the end of the instructions, the user is requested to repeat the instructions or not. If not repeating, the menu is displayed once more.
 
-Would you like to make another enquiry? y/n
 
 ## **Data Model**
 As at the commencement of this application design on 10 January, 2022 the regulator of the Pension industry in Nigeria (PenCom) had published performance data (rates of return on investment) for its 22 licensed PFAs between 2016 and 2019.
