@@ -26,10 +26,11 @@
       - [**Background Image**](#background-image)
       - [**Flowchart**](#flowchart)
   - [**Features**](#features)
-    - ["*Go through the Instructions*"](#go-through-the-instructions)
-    - ["*Print existing result of enquiries*"](#print-existing-result-of-enquiries)
-    - ["*Run new enquiry*"](#run-new-enquiry)
-    - ["*Delete all existing enquiry results*"](#delete-all-existing-enquiry-results)
+    - [*Go through the Instructions*](#go-through-the-instructions)
+    - [*Print existing result of enquiries*](#print-existing-result-of-enquiries)
+    - [*Run new enquiry*](#run-new-enquiry)
+    - [*Delete all existing enquiry results*](#delete-all-existing-enquiry-results)
+  - [Future Features](#future-features)
   - [**Data Model**](#data-model)
   - [**Technologies Used**](#technologies-used)
     - [**Python Packages**](#python-packages)
@@ -128,7 +129,7 @@ Before the menu is displayed, the user is prompted to enter a user name. A user 
 
 When a user inputs an option 1, 2, 3, 4 or 9 the user is requested to input the choice a second time to confirm. If the confirmation is same as the initial input, the option is accepted and the desired feature is executed. If the confirmation fails the menu is displayed once more.
 
-### "*Go through the Instructions*"
+### *Go through the Instructions*
 
 This option, when confirmed by the user, displays the instructions for using the application.
 
@@ -136,7 +137,7 @@ This option, when confirmed by the user, displays the instructions for using the
 
 The instructions are displayed in sets of 5 lines. The user is prompted to press any key to continue to see the next set of instructions. At the end of the instructions, the user is requested to repeat the instructions or not. If not repeating, the menu is displayed once more.
 
-### "*Print existing result of enquiries*"
+### *Print existing result of enquiries*
 
 This feature enables the user to retrieve and view the previous result of enquiries made on the application. This is used for both the enquiries made during the current user session or enquiries made previously provided the same user name is used.
 
@@ -144,7 +145,7 @@ This feature enables the user to retrieve and view the previous result of enquir
 
 The application uses the `set` feature of Python to ensure that the no enquiry result item is saved more than once in the Worksheet of the user. The data is static and historical, thus not expected to change over time.
 
-### "*Run new enquiry*"
+### *Run new enquiry*
 
 The Run new enquiry feature is selected by typing 3 when the menu is displayed. This is the main feature that enables the user input the fund type of interest, the start and end year, the PFA of interest before the enquiry result is displayed.
 
@@ -162,7 +163,7 @@ After selecting a PFA or No PFA, the application displays the result of the enqu
 
 ![Save enquiry](/readme-docs/save_enquiry.png)
 
-### "*Delete all existing enquiry results*"
+### *Delete all existing enquiry results*
 
 A user may decide to delete all previous enquiries made on the application by selecting option 4. The application will proceed and clear all the enquiries saved on the user's Worksheet.
 
@@ -170,6 +171,11 @@ A user may decide to delete all previous enquiries made on the application by se
 
 Message is displayed at the starting of the deletion and after successful deletion or otherwise. If there are no enquiry results to delete, the user is notified.
 
+## Future Features
+
+- Implement a password to ensure returning user is same person
+- Addition of new data for subsequent years from the application instead of directly on the Google sheet
+  
 ## **Data Model**
 
 As at the commencement of this application design on 10 January, 2022 the regulator of the Pension industry in Nigeria (PenCom) had published performance data (rates of return on investment) for its 22 licensed PFAs between 2016 and 2019.
