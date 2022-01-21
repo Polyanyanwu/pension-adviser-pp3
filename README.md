@@ -33,7 +33,7 @@
   - [Future Features](#future-features)
   - [**Data Model**](#data-model)
   - [**Technologies Used**](#technologies-used)
-    - [**Python Packages**](#python-packages)
+    - [**Python Libraries**](#python-libraries)
     - [**Ancillary Technologies**](#ancillary-technologies)
     - [**VSCode Extensions Used**](#vscode-extensions-used)
   - [**Testing**](#testing)
@@ -194,20 +194,29 @@ The second Excel Sheet contains data for each PFA, Fund type, Year and the retur
 In this model when additional data becomes available, it could be added to the Excel sheet and be used in the computation.
 
 ## **Technologies Used**
+  
+  The main technolgies used are:
 
-### **Python Packages**
+  1. Python3 (the main language used in programming all the data manipulation and user interactions)
+  
+  2. HTML (used to display background image, the terminal, button and footer)
+  
+  3. CSS (used in styling the html elements on the page)
 
-- [gspread](https://pypi.org/project/gspread/) : enables communication with Google Sheets
+The Python libraries and ancillary technolgies used are given below.
 
+### **Python Libraries**
+
+- [gspread](https://pypi.org/project/gspread/)
+  - The `gspread` library enables communication with Google Sheets. It is the library I used to open, read and write data to the Spreedsheet used in the application.
 - [google.oauth2.service_account](https://google-auth.readthedocs.io/en/stable/index.html)
   - contains Credentials: used to validate credentials and grant access to Google service accounts
 - [time](https://docs.python.org/3/library/time.html#time.sleep)
-  - contains sleep member that permits stalling the program for a stated time
-
+  - The time library contains sleep member that permits stalling the program for a stated time. I used this to pause the application for 2 seconds after displaying the initial "PEN - A" logo of the application, just for a better user experience.
 - [better_profanity](https://pypi.org/project/better-profanity/)
-  - profanity: checks that words are not profane
+  - profanity: checks that words are not profane. I used this when validating new user name.
 - [py-getch](https://github.com/joeyespo/py-getch)
-  - getch: used to enable *'Press any key to continue...'* function
+  - contains the `getch`: used to enable *'Press any key to continue...'* function. I used this when displaying sets of instructions to the user, and when a user need to read a validayion message before proceeding with other tasks.
 
 ### **Ancillary Technologies**
 
