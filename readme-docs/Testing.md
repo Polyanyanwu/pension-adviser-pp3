@@ -1,13 +1,16 @@
-# Manual Testing
+# **Manual Testing**
 
 [Return to README](https://github.com/Polyanyanwu/pension-adviser-pp3/blob/cabc6a439ce92cb7939c3de84c354c45f86528d7/README.md)
 
-- [Manual Testing](#manual-testing)
+The application was thoroughly tested at each step of the development. After the deployment another series of tests were done. Below are the result and evidence of the manual testing of all aspects of the application, some done at development stage and others after deployment.
+
+- [**Manual Testing**](#manual-testing)
   - [**User Name**](#user-name)
   - [**Reload Application**](#reload-application)
   - [**Main Menu**](#main-menu)
   - [**Confirmation of Selection**](#confirmation-of-selection)
   - [**Go through the instructions**](#go-through-the-instructions)
+  - [**Print existing result of enquiries**](#print-existing-result-of-enquiries)
   - [**PFA Selection**](#pfa-selection)
 
 ## **User Name**
@@ -57,11 +60,11 @@ Secondly, enter the letter k, which is not a number and the error message is dis
 
 ## **Confirmation of Selection**
 
-When the menu is displayed (same with most selection menus) and user inputs 1, a confirmation of the input is requested. 
+When the menu is displayed (same with most selection menus) and user inputs 1, a confirmation of the input is requested.
 
-![Confirm input](readme-docs/confirm_input.png)
+If the user types a different number from the initial input, an error is displayed and the user is prompted to press any key to try again.
 
-If the user types a different number from the initial input, an error is displayed 
+![Confirm input Error](/readme-docs/confirm_input_none.png)
 
 ## **Go through the instructions**
 
@@ -70,6 +73,17 @@ When the menu is displayed and user inputs 1, a confirmation of the input is req
 ![Repeat Instructions](/readme-docs/repeat_instruction_error.png)
 
 At the prompt to Repeat Instructions, type in an character which is neither y or n, an error is printed requesting the user to input y or n. When y is inputted, the instructions are printed again. If n is inputted, the application displays the main menu once more
+
+## **Print existing result of enquiries**
+
+At the main menu prompt, select 2 and confirm slection by inputting 2 again.
+The existing result of enquiries are displayed.
+
+![Existing Result Okay](/readme-docs/enquiry_result_ok.png)
+
+If there is no existing enquiry results for the user, an error message is displayed prompting the user to run an enquiry before using this option.
+
+![Existing Result Error](/readme-docs/enquiry_result_none.png)
 
 ## **PFA Selection**
 
