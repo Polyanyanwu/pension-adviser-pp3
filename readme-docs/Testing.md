@@ -6,6 +6,7 @@
   - [**User Name**](#user-name)
   - [**Reload Application**](#reload-application)
   - [**Main Menu**](#main-menu)
+  - [**Confirmation of Selection**](#confirmation-of-selection)
   - [**Go through the instructions**](#go-through-the-instructions)
   - [**PFA Selection**](#pfa-selection)
 
@@ -53,6 +54,14 @@ Test that only valid menu options are accepted. The menu is displayed after the 
 First input the number 6, which is not included in any of the menu options, the error is printed asking the user to input the valid number among those displayed.
 
 Secondly, enter the letter k, which is not a number and the error message is displayed reminding the user that an integer is expected. Enter a valid number in the options listed and the application executes the selection option.
+
+## **Confirmation of Selection**
+
+When the menu is displayed (same with most selection menus) and user inputs 1, a confirmation of the input is requested. 
+
+![Confirm input](readme-docs/confirm_input.png)
+
+If the user types a different number from the initial input, an error is displayed 
 
 ## **Go through the instructions**
 
