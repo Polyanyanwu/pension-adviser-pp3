@@ -4,6 +4,9 @@
 
 - [Manual Testing](#manual-testing)
   - [**User Name**](#user-name)
+  - [**Reload Application**](#reload-application)
+  - [**Main Menu**](#main-menu)
+  - [**Go through the instructions**](#go-through-the-instructions)
   - [**PFA Selection**](#pfa-selection)
 
 ## **User Name**
@@ -34,6 +37,30 @@ The leading and trailing spaces are removed and user name is accepted leading to
 ![Username Invalid Character Test](/readme-docs/invalid_char_username.png)
 
 A message that non alphanumeric characters detected is displayed and user is prompted to enter another name.
+
+## **Reload Application**
+
+Click on "Reload Program" button at anytime reloads the application and present the prompt to enter user name again.
+
+![Reload Program](/readme-docs/reload.png)
+
+## **Main Menu**
+
+Test that only valid menu options are accepted. The menu is displayed after the user name has been successfully inputted.
+
+![Main Menu](/readme-docs/menu_test.png)
+
+First input the number 6, which is not included in any of the menu options, the error is printed asking the user to input the valid number among those displayed.
+
+Secondly, enter the letter k, which is not a number and the error message is displayed reminding the user that an integer is expected. Enter a valid number in the options listed and the application executes the selection option.
+
+## **Go through the instructions**
+
+When the menu is displayed and user inputs 1, a confirmation of the input is requested. If the user types 1 to confirm, the Instructions are printed in group of 5 lines. The user presses any key to advance to the next set of instructions.
+
+![Repeat Instructions](/readme-docs/repeat_instruction_error.png)
+
+At the prompt to Repeat Instructions, type in an character which is neither y or n, an error is printed requesting the user to input y or n. When y is inputted, the instructions are printed again. If n is inputted, the application displays the main menu once more
 
 ## **PFA Selection**
 

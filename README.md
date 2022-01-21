@@ -258,7 +258,7 @@ The two linters assisted me a lot to write code free of syntax errors and well s
 
 ### **Manual Testing**
 
-I have done comprehensive manual testing both during the development of the application and after it had been deployed. The documented manual testing is available [HERE](https://github.com/Polyanyanwu/pension-adviser-pp3/blob/54afbf3ee5a9c90724686643eaf445e69c42a39a/readme-docs/funtionality_test.md).
+I have done comprehensive manual testing both during the development of the application and after it had been deployed. The documented manual testing is available [HERE](https://github.com/Polyanyanwu/pension-adviser-pp3/blob/4f76ef1684bf47c6f3ac74a7c29ecb67484a9cc0/readme-docs/Testing.md).
 
 ### **HTML W3C Validator**
 
