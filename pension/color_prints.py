@@ -4,6 +4,8 @@ when each function is called, if a second parameter of newline
 is given as "" empty string,
 the next print is done on same line
 
+Idea of the functions for colors was taken from GeekforGeeks
+
 """
 
 

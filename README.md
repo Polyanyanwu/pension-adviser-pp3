@@ -49,6 +49,10 @@
     - [**Resolved Bugs**](#resolved-bugs)
   - [**Deployment**](#deployment)
   - [**Credits**](#credits)
+    - [**Content**](#content)
+    - [**Code**](#code)
+    - [**Media**](#media)
+    - [**Acknowledgements**](#acknowledgements)
 
 ## **Objective**
 
@@ -376,3 +380,40 @@ Ensure that the Python is listed first with Node.js second as the order of the l
 14. Heroku will then build the application and after completion of the build process you will see *Your App Was Successfully Deployed* message and a link to the application's live site is displayed.
 
 ## **Credits**
+
+### **Content**
+
+    The data on the yearly investment returns for each Pension Fund Administrator (PFA) in Nigeria was downloaded from the website of the regulator of Pension industry in Nigeria [National Pension Commission -PenCom](https://www.pencom.gov.ng/wp-content/uploads/2020/11/RATES-OF-RETURN-DATA-2016-TO-2019-RSAs.pdf).
+  
+### **Code**
+
+- The code for the SCOPE and opening the Spreadsheet from Google was taken from the LoveSandwiches application of the Code Institute.
+
+- Credit to [Snyk Advisor](https://snyk.io/advisor/python/better-profanity) for guidance on the installation and use of the `better-profanity` library which I used in validation of user name.
+
+- The idea to find min and max value of a common key in a list of dictionary items was gotten from the contribution of [Hugh Bothwell in stackoverflow.com](https://stackoverflow.com/questions/5320871/how-to-find-the-min-max-value-of-a-common-key-in-a-list-of-dicts)
+
+```Python
+lst = [{'price': 99, 'barcode': '2342355'}, {'price': 88, 'barcode': '2345566'}]
+
+maxPricedItem = max(lst, key=lambda x:x['price'])
+minPricedItem = min(lst, key=lambda x:x['price'])
+ 
+```
+
+- THe idea of using the escape codes and programming functions to print on different colors was gotten from [GeeksforGeeks](https://www.geeksforgeeks.org/print-colors-python-terminal/)
+
+### **Media**
+
+- The investment background image used as the page background was downloaded from [PngTree.com](https://pngtree.com/free-backgrounds).
+
+### **Acknowledgements**
+
+- Many thanks to my mentor [Brian O'Hare](https://code-institute-room.slack.com/team/U02H67B6DS6) for the encouragement and especially the idea to resolve the import of Python files from other folders.
+
+- I remain grateful to [Dave Horrocks](https://github.com/DaveyJH) for ever being there to criticize my work and assisting in testing the application. I was inspired by his own PP3 project work and borrowed some ideas from it.
+
+- Thanks to [Simen Daehlin](https://code-institute-room.slack.com/team/U4MVA9YQP) for his encouraging words and recommending the use of Error Lens even before the Python project was conceptualized. This was invaluable in coming up with well structured code.
+
+- I'm grateful to my family for their support as I take this bold step to change residence and update skills.
+  

@@ -29,7 +29,9 @@ except gspread.exceptions.GSpreadException as gsp_error:
 def get_fund_years(fund_type: int):
     """ Retrieve the start and end years
     for the given fund type.
-    Arguments:
+    The idea to use a min and max statement with a lambda function
+    was taken from Hugh Bothwell of https://stackoverflow.com
+    Arguments: 
         fund_type: the fund code to be retrieved
     Returns:
         a tuple of the start year and end year
@@ -41,7 +43,7 @@ def get_fund_years(fund_type: int):
         fund_code = "Fund IV"
     try:
         filter_fund = \
-            list(filter(lambda pfa: pfa['fund'] == fund_code, RATES_RECORDS))
+            list(filter(lambda pfa: pfa['fund'] == fund_code, RATES_RECORDS))            
         min_year = min(filter_fund, key=lambda x: x['year'])['year']
         max_year = max(filter_fund, key=lambda x: x['year'])['year']
     # NameError is raised if RATES_RECORDS is not defined
