@@ -2,18 +2,18 @@
 
 ![Site Mockup](/readme-docs/mockup.png)
 
-## Live Site
+## **Live Site**
 
 [Hosted Live Here](https://pension-adviser.herokuapp.com/)
 
-## Repository
+## **Repository**
 
 [View Repository Here](https://github.com/Polyanyanwu/pension-adviser-pp3)
 
 ## **Table of Contents**
 - [**THE PENSION ADVISER**](#the-pension-adviser)
-  - [Live Site](#live-site)
-  - [Repository](#repository)
+  - [**Live Site**](#live-site)
+  - [**Repository**](#repository)
   - [**Table of Contents**](#table-of-contents)
   - [**Objective**](#objective)
   - [**Aims of the Site**](#aims-of-the-site)
@@ -69,8 +69,9 @@ The aim of this site is to provide an interactive application to enable the user
 - Obtain industry average performance on a chosen fund type for a given year
 - Be programmatically error free
 - Be written using Python
-- Check all input errors and handle the gracefully with appropriate messages to the user
+- Check all input errors and handle them gracefully with appropriate messages to the user
 - Educate the user regarding use of the application and validity of inputs
+- If an task is likely to last more than a second, provide a feedback to the user on what the application is doing.
 
 ## **User Experience Design**
 
@@ -88,7 +89,7 @@ My intention is to guide the contributor in the pension industry in Nigeria to e
 
 #### **Wireframe**
 
-The application is of a Command Line type with limitations on the width and height of the interaction area. Therefore, the wirframe is a simple one as given below:
+The application is of a Command Line type with limitations on the width and height of the interaction area. Therefore, the Wirframe is a simple one as given below:
 
 ![Application Wireframe](/readme-docs/pp3_wireframe.png)
 
@@ -119,7 +120,7 @@ The initial flowchart of the application has been produced to guide the applicat
 ***I like to know the performance of each retirement savings account fund type for a fund manager***
 ***As a citizen interested in the economic growth of Nigeria I like to know the pension industry performance over a given period and fund type***
 
-To achieve this User Story the application shall request the fund type, start and end year of interest and PFA. If the PFA is not chosen, as is the case with second User Story above, only the industry average performance for the Fund type is computed and displayed. The application shall display the performance of the selected PFA, the industry average performance for the fund type chosen and the best fund manager for the fund type.
+To achieve these User stories the application shall request the fund type, start and end year of interest and PFA. If the PFA is not chosen, as is the case with second User Story above, only the industry average performance for the Fund type is computed and displayed. The application shall display the performance of the selected PFA, the industry average performance for the fund type chosen and the best fund manager for the fund type.
 
 ***As a user of the application I like to view my previous enquiries.***
 
@@ -129,9 +130,9 @@ The above requirements led to the design of the main menu of the application giv
 
 ![Application Main Menu](/readme-docs/main_menu.png)
 
-Before the menu is displayed, the user is prompted to enter a user name. A user name is mandatory as it is used by the application as the name of the Worksheet to be used in saving the results of the user enquiries. If same user name is provided as an existing one, the user is requested to confirm if he/she is returning user. If not returning, another name is requested from the user. The user name is not case sensitive, is required to be alphanumeric, between 3 and 15 characters and is not a profane word.
+Before the menu is displayed, the user is prompted to enter a user name. A user name is mandatory as it is used by the application as the name of the Worksheet to be used in saving the results of the user enquiries. If same user name is provided as an existing one, the user is requested to confirm if he/she is a returning user. If not returning, another name is requested from the user. The user name is not case sensitive, is required to be alphanumeric, between 3 and 15 characters and is not a profane word.
 
-When a user inputs an option 1, 2, 3, 4 or 9 the user is requested to input the choice a second time to confirm. If the confirmation is same as the initial input, the option is accepted and the desired feature is executed. If the confirmation fails the menu is displayed once more.
+When a user inputs an option 1, 2, 3, 4 or 9 the user is requested to input the choice a second time to confirm. If the confirmation is same as the initial input, the option is accepted and the desired feature is executed. If the confirmation fails, the menu is displayed once more.
 
 ### *Go through the Instructions*
 
@@ -147,7 +148,7 @@ This feature enables the user to retrieve and view the previous result of enquir
 
 ![Enquiry Results](/readme-docs/enquiry_result.png)
 
-The application uses the `set` feature of Python to ensure that the no enquiry result item is saved more than once in the Worksheet of the user. The data is static and historical, thus not expected to change over time.
+The application uses the `set` feature of Python to ensure that no enquiry result item is saved more than once in the Worksheet of the user. The data is static and historical, thus not expected to change over time.
 
 ### *Run new enquiry*
 
@@ -212,7 +213,7 @@ The Python libraries and ancillary technologies used are given below.
 ### **Python Libraries**
 
 - [gspread](https://pypi.org/project/gspread/)
-  - The `gspread` library enables communication with Google Sheets. It is the library I used to open, read and write data to the Spreedsheet used in the application.
+  - The `gspread` library enables communication with Google Sheets. It is the library I used to open, read and write data to the Spreadsheet used in the application.
 - [google.oauth2.service_account](https://google-auth.readthedocs.io/en/stable/index.html)
   - contains Credentials: used to validate credentials and grant access to Google service accounts
 - [time](https://docs.python.org/3/library/time.html#time.sleep)
@@ -220,7 +221,7 @@ The Python libraries and ancillary technologies used are given below.
 - [better_profanity](https://pypi.org/project/better-profanity/)
   - profanity: checks that words are not profane. I used this when validating new user name.
 - [py-getch](https://github.com/joeyespo/py-getch)
-  - contains the `getch`: used to enable *'Press any key to continue...'* function. I used this when displaying sets of instructions to the user, and when a user need to read a validayion message before proceeding with other tasks.
+  - contains the `getch`: used to enable *'Press any key to continue...'* function. I used this when displaying sets of instructions to the user, and when a user need to read a validation message before proceeding with other tasks.
 
 ### **Ancillary Technologies**
 
@@ -245,9 +246,13 @@ The Python libraries and ancillary technologies used are given below.
 Some VSCode extensions were used during the development of the application. They are:
 
 - [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+This extension assisted to give meaningful messages on the Python code regarding structure and syntax.
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+This assisted with production of this README with Table of Contents in particular.
 - [markdown lint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint)
+This extension assisted with the structure of README content.
 - [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+This was very useful to check spelling errors in the code.
 
 ## **Testing**
 
@@ -331,7 +336,7 @@ Lighthouse testing was carried out on the deployed site with satisfactory result
 
 ## **Deployment**
 
-The application was developed using the Code Institute template for [Python Essentials application](https://github.com/Code-Institute-Org/python-essentials-template) and deployed at [Heroku](https://heroku.com). THe live site is accessible at [Nigerian Pension Adviser](https://pension-adviser.herokuapp.com/).
+The application was developed using the Code Institute template for [Python Essentials application](https://github.com/Code-Institute-Org/python-essentials-template) and deployed at [Heroku](https://heroku.com). The live site is accessible at [Nigerian Pension Adviser](https://pension-adviser.herokuapp.com/).
 
 Find below steps that were used to effectively deploy the application to the Heroku platform.
 
