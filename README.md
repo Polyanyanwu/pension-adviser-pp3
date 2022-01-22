@@ -30,7 +30,7 @@
     - [*Print existing result of enquiries*](#print-existing-result-of-enquiries)
     - [*Run new enquiry*](#run-new-enquiry)
     - [*Delete all existing enquiry results*](#delete-all-existing-enquiry-results)
-  - [Future Features](#future-features)
+  - [**Future Features**](#future-features)
   - [**Data Model**](#data-model)
   - [**Technologies Used**](#technologies-used)
     - [**Python Libraries**](#python-libraries)
@@ -60,13 +60,13 @@ The Nigerian pension industry permits contributors to change their PFA once in a
 
 The aim of this site is to provide an interactive application to enable the user to obtain information on PFA performance on any of the funds in the Nigerian pension industry. When completed the final product should:
 
-* Enable the user chose the fund type of interest
-* Obtain data on PFA performance on the chosen fund
-* Obtain industry average performance on a chosen fund type for a given year
-* Be programmatically error free
-* Be written using Python
-* Check all input errors and handle the gracefully with appropriate messages to the user
-* Educate the user regarding use of the application and validity of inputs
+- Enable the user chose the fund type of interest
+- Obtain data on PFA performance on the chosen fund
+- Obtain industry average performance on a chosen fund type for a given year
+- Be programmatically error free
+- Be written using Python
+- Check all input errors and handle the gracefully with appropriate messages to the user
+- Educate the user regarding use of the application and validity of inputs
 
 ## **User Experience Design**
 
@@ -171,7 +171,7 @@ A user may decide to delete all previous enquiries made on the application by se
 
 Message is displayed at the starting of the deletion and after successful deletion or otherwise. If there are no enquiry results to delete, the user is notified.
 
-## Future Features
+## **Future Features**
 
 - Implement a password to ensure returning user is same person
 - Addition of new data for subsequent years from the application instead of directly on the Google sheet
@@ -293,7 +293,7 @@ Lighthouse testing was carried out on the deployed site with satisfactory result
 
 - Another user could access the enquiry results of someone if the user name is known
 
-*This is due to the fact that the application is not using any means of ensuring unique identity of a user. There is no password maintained in the application as it is presently. To resolve this could have involved maintaining passwords and associating them sith the user name. Full validation of passwords, hashing, expiration and all that goes into password maintenance would require more time than is available to me for this project.*
+*This is due to the fact that the application is not using any means of ensuring unique identity of a user. There is no password maintained in the application as it is presently. To resolve this could have involved maintaining passwords and associating them with the user name. Full validation of passwords, hashing, expiration and all that goes into password maintenance would require more time than is available to me for this project.*
 
 - The application is not responsive in mobile devices and small screens.
 

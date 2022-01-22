@@ -14,7 +14,8 @@ The application was thoroughly tested at each step of the development. After the
   - [**Run new enquiry**](#run-new-enquiry)
     - [**Select Fund Type**](#select-fund-type)
     - [**Input Start and End Year**](#input-start-and-end-year)
-  - [**PFA Selection**](#pfa-selection)
+    - [**PFA Selection**](#pfa-selection)
+  - [**Delete all existing enquiry results**](#delete-all-existing-enquiry-results)
 
 ## **User Name**
 
@@ -109,9 +110,14 @@ After selecting a Fund Type successfully, the years that have data available for
 ![Year Range Ok](/readme-docs/year_range_ok.png)
 
 If the data entered is not a year within the range displayed, an error is printed requesting the user to input a valid year in the range.
-Another validation is made when the end year is entered to check that it is 
 
-## **PFA Selection**
+Another validation is made when the End Year is entered to check that it is greater or equal to Start Year. If it is not, an error is displayed and the user is prompted to enter the End Year again. In the example displayed the start year is 2017 and an end year of 2016 was entered.
+
+![Year Range Error](/readme-docs/end_year_error.png)
+
+If a valid Start Year and End Year has been entered, the application prompts for the selection of a PFA (Pension Fund Administrator)
+
+### **PFA Selection**
 
 This section tests that the user is able to select any of the PFA in the list of 22 PFAs. The PFAs are presented in batches. The user is to input n to see the next set of data or p for previous. The instructions in yellow print shows the user when p or n is available. For instance, p is not available for the first set displayed.
 
@@ -145,3 +151,15 @@ The application will display the previous set of PFAs and await further user inp
 If the p is inputted where it was not available, like for the first set of PFA, the input is treated as an error as shown below.
 
 ![Previous set of PFA to start Test](/readme-docs/validate_pfa_choice_press_p_to_start.png)
+
+After successfully selecting a PFA or item 0 for No PFA, the result of the enquiry is displayed.
+
+## **Delete all existing enquiry results**
+
+At the main menu prompt, select 4 and confirm selection by inputting 4 again. If there is existing result of enquiries, a message is displayed informing the user that the enquiries are being deleted. The user is also notified when the deletion is completed.
+
+![Deleting Enquiries](/readme-docs/delete_result_error.png)
+
+Select option 4 again from the menu after deleting the existing result. The application will give message that there is no existing enquiries to delete and advise the user to run enquiries first.
+
+![No Enquiry To Delete](/readme-docs/enquiry_result_none.png)
