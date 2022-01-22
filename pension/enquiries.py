@@ -120,7 +120,7 @@ def get_years(fund_type: int):
         end_year = input(" Please enter End Year: ")
         if validate_year(valid_years, end_year):
             if int(start_year) > int(end_year):
-                print_red("End Year must be less or equal to Start Year")
+                print_red("End Year must be greater or equal to Start Year")
             else:
                 break
     return(start_year, end_year)

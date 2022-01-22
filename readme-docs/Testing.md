@@ -11,6 +11,9 @@ The application was thoroughly tested at each step of the development. After the
   - [**Confirmation of Selection**](#confirmation-of-selection)
   - [**Go through the instructions**](#go-through-the-instructions)
   - [**Print existing result of enquiries**](#print-existing-result-of-enquiries)
+  - [**Run new enquiry**](#run-new-enquiry)
+    - [**Select Fund Type**](#select-fund-type)
+    - [**Input Start and End Year**](#input-start-and-end-year)
   - [**PFA Selection**](#pfa-selection)
 
 ## **User Name**
@@ -76,7 +79,7 @@ At the prompt to Repeat Instructions, type in an character which is neither y or
 
 ## **Print existing result of enquiries**
 
-At the main menu prompt, select 2 and confirm slection by inputting 2 again.
+At the main menu prompt, select 2 and confirm selection by inputting 2 again.
 The existing result of enquiries are displayed.
 
 ![Existing Result Okay](/readme-docs/enquiry_result_ok.png)
@@ -84,6 +87,29 @@ The existing result of enquiries are displayed.
 If there is no existing enquiry results for the user, an error message is displayed prompting the user to run an enquiry before using this option.
 
 ![Existing Result Error](/readme-docs/enquiry_result_none.png)
+
+## **Run new enquiry**
+
+At the main menu prompt, select 3 and confirm selection by inputting 3 again. The available Fund Types are listed for the user to select.
+
+### **Select Fund Type**
+
+![Fund Types](/readme-docs/select_fund.png)
+
+If user inputs any character outside of the numbers 1 to 4, validation is carried out and an error message is displayed. The user is prompted again to input any of the numbers 1 to 4.
+
+![Fund Type Error](/readme-docs/select_fund_none.png)
+
+Inputting any of the valid numbers: 1 ,2 3, or 4 will display the next prompt to input the start and end year.
+
+### **Input Start and End Year**
+
+After selecting a Fund Type successfully, the years that have data available for the selected fund type is displayed as *Valid Year Range*
+
+![Year Range Ok](/readme-docs/year_range_ok.png)
+
+If the data entered is not a year within the range displayed, an error is printed requesting the user to input a valid year in the range.
+Another validation is made when the end year is entered to check that it is 
 
 ## **PFA Selection**
 

@@ -195,7 +195,7 @@ In this model when additional data becomes available, it could be added to the E
 
 ## **Technologies Used**
   
-  The main technolgies used are:
+  The main technologies used are:
 
   1. Python3 (the main language used in programming all the data manipulation and user interactions)
   
@@ -203,7 +203,7 @@ In this model when additional data becomes available, it could be added to the E
   
   3. CSS (used in styling the html elements on the page)
 
-The Python libraries and ancillary technolgies used are given below.
+The Python libraries and ancillary technologies used are given below.
 
 ### **Python Libraries**
 
