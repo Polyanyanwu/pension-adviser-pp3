@@ -337,10 +337,36 @@ Find below steps that were used to effectively deploy the application to the Her
 
 ![Heroku New App](/readme-docs/create_application.png)
 
-3. From the Create New App form that opens, input an App Name and chose a Region (Europe or United States). When you enter an App Name if it is available, Heroku will indicate that it is available. If its not available you chose another name. Application names in Heroku are unique.
+3. From the Create New App form that opens, input an App Name and chose a Region (Europe or United States). When you enter an App Name if it is available, Heroku will indicate that it is available. If its not available you chose another name. Application names in Heroku are unique. I created the app (pension-adviser).
 
 ![Heroku New](/readme-docs/create_new_app.png)
 
-4. 
+4. The application is created within Heroku and you are positioned to the *deploy* tab. The deploy tab will be used later, for the next step click on the *Settings* tab.
+
+5. From the Settings tab, click on the Reveal Config Vars button to open the Config Vars which shows empty KEY and VALUE settings. In my own application I am using Google credential to access the spreadsheet and created a `creds.json`.
+
+6. In the KEY field input CREDS in capitals and copy and paste the contents of the `creds.json` file into the VALUE field. Click the Add button to add the CREDS key to the settings.
+
+7. Add another KEY for PORT with the VALUE of 8000; click the Add button to the right. The settings Config Var entries will look like below:
+
+![Config Vars](/readme-docs/config_vars.png)
+
+8. Next click on the Add buildpack button below the config vars section. Select Python as the first build pack and click on save changes. Repeat the step to add node.js to the buildpack.
+
+![Build pack list](/readme-docs/build_pack_list.png)
+
+Ensure that the Python is listed first with Node.js second as the order of the listing is important. The order could be changed by clicking and dragging any of them. The saved Buildpack should look like the following:
+
+![Build Packs](/readme-docs/build_packs.png)
+
+9. Next scroll up and click on the Deploy tab.
+10. Click on a Deployment method, in this case it is Github. Click on Connect to Github.
+11. At the Connect to GitHub section, select your Github account; enter the name of the repository and click on the Search button.
+  
+![Connect Github](/readme-docs/connect_github.png)
+
+12. If the account and repository are located by Heroku , click on Connect button. This action will connect the Github repository to the application created in Heroku.
+
+13. 
 
 ## **Credits**
