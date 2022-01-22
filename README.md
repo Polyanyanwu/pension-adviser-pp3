@@ -47,7 +47,7 @@
   - [**Bugs**](#bugs)
     - [**Current Bugs**](#current-bugs)
     - [**Resolved Bugs**](#resolved-bugs)
-  - [**Deployments**](#deployments)
+  - [**Deployment**](#deployment)
   - [**Credits**](#credits)
 
 ## **Objective**
@@ -307,24 +307,40 @@ Lighthouse testing was carried out on the deployed site with satisfactory result
 
 1. Delete existing result of enquiry returns successful even on an empty worksheet.
 
-This was resolved with Commit [4629107](https://github.com/Polyanyanwu/pension-adviser-pp3/commit/462910724d333966d89fa417e001496b3b4f6ffe) by deleting the Worksheet for the user instead of only clearing the content. The intended behavior is to delete the Worksheet, then the application will return the correct message.
+  This was resolved with Commit [4629107](https://github.com/Polyanyanwu/pension-adviser-pp3/commit/462910724d333966d89fa417e001496b3b4f6ffe) by deleting the Worksheet for the user instead of only clearing the content. The intended behavior is to delete the Worksheet, then the application will return the correct message.
 
-1. I was getting warning of formatting a regular string which could be done with f-string.
+2. I was getting warning of formatting a regular string which could be done with f-string.
 
-This was resolved in Commit [7aaec39](https://github.com/Polyanyanwu/pension-adviser-pp3/commit/7aaec39ba050335a441159358957d0ac0bfc6333) by changing the statement using f-string.
+  This was resolved in Commit [7aaec39](https://github.com/Polyanyanwu/pension-adviser-pp3/commit/7aaec39ba050335a441159358957d0ac0bfc6333) by changing the statement using f-string.
 
-1. User name was case sensitive making the application create a new user due to case sensitivity
+3. User name was case sensitive making the application create a new user due to case sensitivity
 
-Resolution was via Commit [4a5d13](https://github.com/Polyanyanwu/pension-adviser-pp3/commit/4a5d13f531f2a51aa9e4c85adac07bf5fd28ce42) which changed user names to lower case before saving the Worksheet.
+  Resolution was via Commit [4a5d13](https://github.com/Polyanyanwu/pension-adviser-pp3/commit/4a5d13f531f2a51aa9e4c85adac07bf5fd28ce42) which changed user names to lower case before saving the Worksheet.
 
-1. The application was crashing when a user try to print empty existing data
+4. The application was crashing when a user try to print empty existing data
 
-Resolved by initializing the existing data to an empty list `existing_data = []` via Commit [31c8be9](https://github.com/Polyanyanwu/pension-adviser-pp3/commit/31c8be957b5f3f9c24915eab4ad84050891a0f0a)
+  Resolved by initializing the existing data to an empty list `existing_data = []` via Commit [31c8be9](https://github.com/Polyanyanwu/pension-adviser-pp3/commit/31c8be957b5f3f9c24915eab4ad84050891a0f0a)
 
-1. Newly created user was not able to continue using the application
+5. Newly created user was not able to continue using the application
 
-Resolved by returning `True` to `validate_existing_user` function via Commit [e795527](https://github.com/Polyanyanwu/pension-adviser-pp3/commit/e795527120cea7643413a47dd85aadd577f31000)
+  Resolved by returning `True` to `validate_existing_user` function via Commit [e795527](https://github.com/Polyanyanwu/pension-adviser-pp3/commit/e795527120cea7643413a47dd85aadd577f31000)
 
-## **Deployments**
+## **Deployment**
+
+The application was developed using the Code Institute template for [Python Essentials application](https://github.com/Code-Institute-Org/python-essentials-template) and deployed at [Heroku](https://heroku.com). THe live site is accessible at [Nigerian Pension Adviser](https://pension-adviser.herokuapp.com/).
+
+Find below steps that were used to effectively deploy the application to the Heroku platform.
+
+1. Sign up / Log in to [Heroku](https://heroku.com) and create an account.
+
+2. From the Heroku Dashboard page select 'New' and then 'Create New App'
+
+![Heroku New App](/readme-docs/create_application.png)
+
+3. From the Create New App form that opens, input an App Name and chose a Region (Europe or United States). When you enter an App Name if it is available, Heroku will indicate that it is available. If its not available you chose another name. Application names in Heroku are unique.
+
+![Heroku New](/readme-docs/create_new_app.png)
+
+4. 
 
 ## **Credits**
