@@ -360,13 +360,19 @@ Ensure that the Python is listed first with Node.js second as the order of the l
 ![Build Packs](/readme-docs/build_packs.png)
 
 9. Next scroll up and click on the Deploy tab.
+
 10. Click on a Deployment method, in this case it is Github. Click on Connect to Github.
+
 11. At the Connect to GitHub section, select your Github account; enter the name of the repository and click on the Search button.
   
 ![Connect Github](/readme-docs/connect_github.png)
 
 12. If the account and repository are located by Heroku , click on Connect button. This action will connect the Github repository to the application created in Heroku.
 
-13. 
+13. Next is to choose either Automatic deploy or Manual deploy. The Automatic deploy will execute each time you push a commit to your Github repository connected to the application. You can also choose manual deployment, select the branch to deploy and click on Deploy Branch.
+
+![Deployment Method](/readme-docs/deployment_method.png)
+
+14. Heroku will then build the application and after completion of the build process you will see *Your App Was Successfully Deployed* message and a link to the application's live site is displayed.
 
 ## **Credits**
