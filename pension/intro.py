@@ -13,7 +13,11 @@ from pension.model import user_worksheet_exist
 
 
 def introduction():
-    """ print initial welcome message and obtain username for the user"""
+    """
+    Print initial welcome message and obtain username for the user
+    Returns:
+        user_name(str): the validated user name
+    """
 
     _print_intro_logo()
     sleep(2)
@@ -30,7 +34,7 @@ def introduction():
 
 
 def _print_intro_logo():
-    """ print the introduction logo """
+    """ Print the introduction logo """
 
     print_cyan("OOOOOOOOO    OOOOOOOOO    OO         OO           OO")
     print_white("OO     OO    OO           OO OO      OO          OO OO")
@@ -45,7 +49,7 @@ def _print_intro_logo():
 
 
 def print_instructions():
-    """print the instructions to guide the user """
+    """Print the instructions to guide the user """
 
     print()
     print_cyan("                THE INSTRUCTIONS")
@@ -74,7 +78,9 @@ def print_instructions():
 
 
 def instruction_manager():
-    """ repeat print instructions for user until the user is okay """
+    """
+    Repeat print instructions for user until the user is okay
+    """
 
     print_instructions()
     print_inst = True
@@ -85,7 +91,11 @@ def instruction_manager():
 
 
 def main_menu():
-    """ present options for the user to select """
+    """
+    Present menu options for the user to select
+    Returns:
+        menu_choice(str): inputted menu choice
+    """
     _print_menu_options()
     while True:
         print_white("Please enter your choice", '')
@@ -100,7 +110,7 @@ def main_menu():
 
 
 def _print_menu_options():
-    """ display menu options to user """
+    """ Display menu options to user """
 
     print_cyan("Please choose an option on the menu ")
     print_yellow("by inputting 1, 2, 3, 4 or 9")
@@ -117,7 +127,13 @@ def _print_menu_options():
 
 
 def validate_existing_user(user_name):
-    """ check if worksheet exist """
+    """
+    Check if user has a saved worksheet
+    Parameter:
+        user_name(str): the user name to check
+    Returns:
+        bool: True if a worksheet exists for the user or False if not
+    """
 
     if user_worksheet_exist(user_name.lower()):
         print_yellow(f"{user_name} already exists.")
