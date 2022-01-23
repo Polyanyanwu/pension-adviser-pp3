@@ -7,13 +7,14 @@ from pension.color_prints import print_cyan, print_white, print_red
 
 
 def confirm_yes_no(prompt: str):
-    """ display a prompt and let user confirm by typing y or n
+    """
+    Display a prompt and let user confirm by typing y or n
 
-        Arguments:
-            prompt: this will be the message that needs a Yes or No
+    Parameter:
+        prompt(str): this will be the message that needs a Yes or No
             confirmation from user
-        Returns:
-            boolean: True if user confirms "y" False if 'n'.
+    Returns:
+        bool: True if user confirms "y" False if 'n'.
      """
 
     yes_no = ('y', 'n')

@@ -6,21 +6,24 @@ from pension.color_prints import print_cyan, print_red, print_white
 
 
 class Username:
-    """Create a Username object
-
-    Returns a validated username entered by the user
+    """
+    Create a User name object
+    Returns a validated user name entered by the user
     """
 
     def __init__(self):
         self.username = self._input_username()
 
     def _validate_username(self,  user_name: str):
-        """Checks username input is valid
-
-        Arguments:
-            user_name: The string input typed in by the user to be validated
+        """
+        Checks user name input is valid
+        Name should be between 3 and 15 characters long.
+        The function checks for profane words using `better_profanity.
+        Parameters:
+            user_name(str): The string input typed in
+            by the user to be validated
         Returns:
-            boolean: True when validated or false if not validated
+            bool: True when validated or false if not validated
         """
 
         try:
@@ -42,12 +45,9 @@ class Username:
         return True
 
     def _input_username(self):
-        """ Function to enable user to input a username
-        The name should be with alphanumeric characters and spaces,
-        between 3 and 15 characters.
-        The function checks for profane words using `better_profanity.
+        """
+        Function to enable user to input a user name
         The prompt for username is repeated until valid username is inputted
-
         Returns:
             string of validated username
         """
