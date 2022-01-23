@@ -1,6 +1,6 @@
 # **Manual Testing**
 
-[Return to README](https://github.com/Polyanyanwu/pension-adviser-pp3/blob/cabc6a439ce92cb7939c3de84c354c45f86528d7/README.md)
+[Return to README](/README.md)
 
 The application was thoroughly tested at each step of the development. After the deployment another series of tests were done. Below are the result and evidence of the manual testing of all aspects of the application, some done at development stage and others after deployment.
 
