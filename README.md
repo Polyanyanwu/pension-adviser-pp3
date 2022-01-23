@@ -71,7 +71,7 @@ The aim of this site is to provide an interactive application to enable the user
 - Be written using Python
 - Check all input errors and handle them gracefully with appropriate messages to the user
 - Educate the user regarding use of the application and validity of inputs
-- If an task is likely to last more than a second, provide a feedback to the user on what the application is doing.
+- If any task is likely to last more than a second, provide a feedback to the user on what the application is doing.
 
 ## **User Experience Design**
 
@@ -97,7 +97,7 @@ The application is of a Command Line type with limitations on the width and heig
 
 In order to enhance the user experience within the Python terminal, I chose to apply some colors available through the color escape codes of Python. I implemented a module that has functions for the colors I used in the application.
 
-For the look and feel of the surrounding areas of the Python terminal, I chose a color scheme through the [Colors.co](https://coolors.co/). The colors pallet used is shown below:
+For the look and feel of the surrounding areas of the Python terminal, I chose a color scheme through the [Colors.co](https://coolors.co/). The color palette used is shown below:
 
 ![Color Pallet](/readme-docs/color_scheme.png)
 
@@ -117,7 +117,8 @@ The initial flowchart of the application has been produced to guide the applicat
 
 ## **Features**
 
-***I like to know the performance of each retirement savings account fund type for a fund manager***
+***I like to know the performance of each retirement savings account fund type for a fund manager.***
+
 ***As a citizen interested in the economic growth of Nigeria I like to know the pension industry performance over a given period and fund type***
 
 To achieve these User stories the application shall request the fund type, start and end year of interest and PFA. If the PFA is not chosen, as is the case with second User Story above, only the industry average performance for the Fund type is computed and displayed. The application shall display the performance of the selected PFA, the industry average performance for the fund type chosen and the best fund manager for the fund type.
@@ -388,7 +389,7 @@ Ensure that the Python is listed first with Node.js second as the order of the l
 
 ### **Content**
 
-- The data on the yearly investment returns for each Pension Fund Administrator (PFA) in Nigeria was downloaded from the website of the regulator of Pension industry in Nigeria [National Pension Commission -PenCom](https://www.pencom.gov.ng/wp-content/uploads/2020/11/RATES-OF-RETURN-DATA-2016-TO-2019-RSAs.pdf).
+- The data on the yearly investment returns for each Pension Fund Administrator (PFA) in Nigeria was downloaded from the website of the regulator of Pension industry in Nigeria - [National Pension Commission -PenCom](https://www.pencom.gov.ng/wp-content/uploads/2020/11/RATES-OF-RETURN-DATA-2016-TO-2019-RSAs.pdf).
   
 ### **Code**
 
@@ -406,7 +407,7 @@ minPricedItem = min(lst, key=lambda x:x['price'])
  
 ```
 
-- THe idea of using the escape codes and programming functions to print on different colors was gotten from [GeeksforGeeks](https://www.geeksforgeeks.org/print-colors-python-terminal/)
+- The idea of using the escape codes and programming functions to print on different colors was gotten from [GeeksforGeeks](https://www.geeksforgeeks.org/print-colors-python-terminal/)
 
 ### **Media**
 

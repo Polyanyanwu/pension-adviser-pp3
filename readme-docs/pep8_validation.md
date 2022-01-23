@@ -25,3 +25,7 @@ No errors were reported during the Pep8 online validation of all the files. Seve
 ## Utils
 
 ![Utils test](/readme-docs/pep8_util.png)
+
+## Enquiries
+
+![Enquiries Pep8 Test](/readme-docs/pep8_enquiries.png)
