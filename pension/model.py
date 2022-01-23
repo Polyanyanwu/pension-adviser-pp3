@@ -31,11 +31,11 @@ def get_fund_years(fund_type: int):
     for the given fund type.
     The idea to use a min and max statement with a lambda function
     was taken from Hugh Bothwell of https://stackoverflow.com
-    Arguments: 
+    Parameters:
         fund_type: the fund code to be retrieved
     Returns:
         a tuple of the start year and end year
-        """
+    """
     # determine the fund-code by appending I to Fund fund_type times
     # for Fund IV change the code from Fund IIII to Fund IV
     fund_code = "Fund " + "I" * fund_type
