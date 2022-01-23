@@ -1,4 +1,12 @@
 # PEP8 Validation
+- [PEP8 Validation](#pep8-validation)
+  - [Run.py](#runpy)
+  - [Color Prints](#color-prints)
+  - [Introduction](#introduction)
+  - [Model](#model)
+  - [Username](#username)
+  - [Utils](#utils)
+  - [Enquiries](#enquiries)
 
 No errors were reported during the Pep8 online validation of all the files. Seven W503 warnings were reported in the enquiries.py and 1 W503 warning in the model.py file. This has been mentioned in the README.
 
