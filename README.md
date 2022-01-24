@@ -1,4 +1,4 @@
-# **THE PENSION ADVISER**
+# **NIGERIAN PENSION ADVISER**
 
 ![Site Mockup](/readme-docs/mockup.png)
 
@@ -11,7 +11,7 @@
 [View Repository Here](https://github.com/Polyanyanwu/pension-adviser-pp3)
 
 ## **Table of Contents**
-- [**THE PENSION ADVISER**](#the-pension-adviser)
+- [**NIGERIAN PENSION ADVISER**](#nigerian-pension-adviser)
   - [**Live Site**](#live-site)
   - [**Repository**](#repository)
   - [**Table of Contents**](#table-of-contents)
